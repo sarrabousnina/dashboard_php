@@ -36,140 +36,315 @@
         <!-- Spinner End -->
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>University</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Wassim</h6>
-                        <span>Admin</span>
-                    </div>
+    <div class="sidebar pe-4 pb-3">
+        <nav class="navbar bg-secondary navbar-dark">
+            <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Université</h3>
+            </a>
+            <div class="d-flex align-items-center ms-4 mb-4">
+                <div class="position-relative">
+                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                 </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <div class="ms-3">
+                    <h6 class="mb-0">Admin</h6>
+                    <span>Admin</span>
+                </div>
+            </div>
+            <div class="navbar-nav w-100">
+                <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                        <a href="button.html" class="dropdown-item">Buttons</a>
+                        <a href="typography.html" class="dropdown-item">Typography</a>
+                        <a href="element.html" class="dropdown-item">Other Elements</a>
+                    </div>
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="formations.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Formations</a>
-                    <a href="evenements.html" class="nav-item nav-link active"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
+                    <a href="evenements.html" class="nav-item nav-link"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
                 </div>
-            </nav>
-        </div>
-        <!-- Sidebar End -->
+                <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
+                <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
+                <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+               
+                <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                        <a href="signin.html" class="dropdown-item">Sign In</a>
+                        <a href="signup.html" class="dropdown-item">Sign Up</a>
+                        <a href="404.html" class="dropdown-item">404 Error</a>
+                        <a href="blank.html" class="dropdown-item">Blank Page</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content p-4">
-            <!-- Formulaire pour Ajouter un Événement Start -->
-            <div class="bg-secondary rounded p-4">
-                <h6 class="mb-4">Ajouter un Événement</h6>
-                <form>
-                    <!-- ID Événement -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="idEvenement" placeholder="ID Événement">
-                        <label for="idEvenement" class="text-light">ID Événement</label>
+            <!-- Statistiques des Événements Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <!-- Événements Disponibles -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fas fa-check fa-3x text-danger"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Événements Disponibles</p>
+                                <h6 class="mb-0">170</h6>
+                            </div>
+                        </div>
                     </div>
-            
-                    <!-- Nom -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="nomEvenement" placeholder="Nom">
-                        <label for="nomEvenement" class="text-light">Nom</label>
+                    <!-- Nouveaux Événements ce Mois -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fas fa-calendar-plus fa-3x text-danger"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Nouveaux Événements ce Mois</p>
+                                <h6 class="mb-0">15</h6>
+                            </div>
+                        </div>
                     </div>
-            
-                    <!-- Date -->
-                    <div class="form-floating mb-3">
-                        <input type="date" class="form-control bg-dark text-light" id="dateEvenement" placeholder="Date">
-                        <label for="dateEvenement" class="text-light">Date</label>
+                    <!-- Types d'Événements -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fas fa-list fa-3x text-danger"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Types d'Événements</p>
+                                <h6 class="mb-0">8 Types</h6>
+                            </div>
+                        </div>
                     </div>
-            
-                    <!-- Local -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="localEvenement" placeholder="Local">
-                        <label for="localEvenement" class="text-light">Local</label>
-                    </div>
-            
-                    <!-- Type (Liste déroulante) -->
-                    <div class="form-floating mb-3">
-                        <select class="form-select bg-dark text-light" id="typeEvenement" aria-label="Type d'événement">
-                            <option selected>Sélectionner un type</option>
-                            <option value="1">Conférence</option>
-                            <option value="2">Atelier</option>
-                            <option value="3">Séminaire</option>
-                        </select>
-                        <label for="typeEvenement" class="text-light">Type</label>
-                    </div>
-            
-                    <!-- Boutons de soumission et d'annulation alignés et centrés -->
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success me-2">Enregistrer</button>
-                        <button type="button" class="btn btn-danger ms-2">Annuler</button>
-                    </div>
-                </form>
+                </div>
             </div>
-            <!-- Formulaire pour Ajouter un Événement End -->
+            <!-- Statistiques des Événements End -->
 
-            <!-- Formulaire pour Modifier un Événement Start -->
-            <div class="bg-secondary rounded p-4 mt-4">
-                <h6 class="mb-4">Modifier un Événement</h6>
-                <form>
-                    <!-- ID Événement (non modifiable) -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="idEvenement" placeholder="ID Événement" value="101" readonly>
-                        <label for="idEvenement" class="text-light">ID Événement</label>
-                    </div>
-    
-                    <!-- Nom -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="nomEvenement" placeholder="Nom" value="Nom de l'Événement">
-                        <label for="nomEvenement" class="text-light">Nom</label>
-                    </div>
-    
-                    <!-- Date -->
-                    <div class="form-floating mb-3">
-                        <input type="date" class="form-control bg-dark text-light" id="dateEvenement" placeholder="Date" value="2024-11-15">
-                        <label for="dateEvenement" class="text-light">Date</label>
-                    </div>
-    
-                    <!-- Local -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control bg-dark text-light" id="localEvenement" placeholder="Local" value="Salle 202">
-                        <label for="localEvenement" class="text-light">Local</label>
-                    </div>
-    
-                    <!-- Type (Liste déroulante) -->
-                    <div class="form-floating mb-3">
-                        <select class="form-select bg-dark text-light" id="typeEvenement">
-                            <option value="1" selected>Conférence</option>
-                            <option value="2">Atelier</option>
-                            <option value="3">Séminaire</option>
-                        </select>
-                        <label for="typeEvenement" class="text-light">Type</label>
-                    </div>
-    
-                    <!-- Boutons Enregistrer et Annuler alignés et centrés -->
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success mx-2">Enregistrer les modifications</button>
-                        <button type="button" class="btn btn-danger mx-2" onclick="window.location.href='evenements.html'">Annuler</button>
-                    </div>
-                </form>
+            <!-- Tableau des Événements Start -->
+        <div class="bg-secondary rounded p-4 mb-4">
+            <h6 class="mb-4">Événements</h6>
+            <div class="d-flex mb-3">
+                <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher un événement">
+                <button class="btn btn-success" onclick="searchEvent()">Rechercher</button>
             </div>
-            <!-- Formulaire pour Modifier un Événement End -->
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-white">
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Nom</th>
+                            <th>Local</th>
+                            <th>Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventTable">
+                        <!-- JavaScript will insert rows here -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between mt-3">
+                    <span id="paginationInfo"></span>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <!-- Content End -->
+        <!-- Tableau des Événements End -->
 
-        <!-- JavaScript pour masquer le spinner -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("spinner").classList.remove("show");
-            });
-        </script>
-        
-    </div>     
+        <!-- Formulaire pour Ajouter un Événement Start -->
+        <div id="addForm" class="bg-secondary rounded p-4">
+            <h6 class="mb-4">Ajouter un Événement</h6>
+            <form>
+                <!-- ID Événement -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-dark text-light" id="idEvenement" placeholder="ID Événement">
+                    <label for="idEvenement" class="text-light">ID Événement</label>
+                </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- Nom -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-dark text-light" id="nomEvenement" placeholder="Nom">
+                    <label for="nomEvenement" class="text-light">Nom</label>
+                </div>
+
+                <!-- Date -->
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control bg-dark text-light" id="dateEvenement" placeholder="Date">
+                    <label for="dateEvenement" class="text-light">Date</label>
+                </div>
+
+                <!-- Local -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-dark text-light" id="localEvenement" placeholder="Local">
+                    <label for="localEvenement" class="text-light">Local</label>
+                </div>
+
+                <!-- Type (Liste déroulante) -->
+                <div class="form-floating mb-3">
+                    <select class="form-select bg-dark text-light" id="typeEvenement">
+                        <option selected>Sélectionner un type</option>
+                        <option value="1">Conférence</option>
+                        <option value="2">Atelier</option>
+                        <option value="3">Séminaire</option>
+                    </select>
+                    <label for="typeEvenement" class="text-light">Type</label>
+                </div>
+
+                <!-- Boutons Enregistrer et Annuler -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success me-2">Enregistrer</button>
+                    <button type="button" class="btn btn-danger ms-2">Annuler</button>
+                </div>
+            </form>
+        </div>
+        <!-- Formulaire pour Ajouter un Événement End -->
+
+        <!-- Formulaire pour Modifier un Événement Start -->
+        <div id="editForm" class="bg-secondary rounded p-4 mt-4">
+            <h6 class="mb-4">Modifier un Événement</h6>
+            <form id="editEventForm">
+                <input type="hidden" id="editEventId">
+                <!-- Nom -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-dark text-light" id="editEventNom" placeholder="Nom">
+                    <label for="editEventNom" class="text-light">Nom</label>
+                </div>
+                <!-- Date -->
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control bg-dark text-light" id="editEventDate" placeholder="Date">
+                    <label for="editEventDate" class="text-light">Date</label>
+                </div>
+                <!-- Local -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-dark text-light" id="editEventLocal" placeholder="Local">
+                    <label for="editEventLocal" class="text-light">Local</label>
+                </div>
+                <!-- Type -->
+                <div class="form-floating mb-3">
+                    <select class="form-select bg-dark text-light" id="editEventType">
+                        <option>Conférence</option>
+                        <option>Atelier</option>
+                        <option>Séminaire</option>
+                    </select>
+                    <label for="editEventType" class="text-light">Type</label>
+                </div>
+                <!-- Boutons Enregistrer et Annuler -->
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-success mx-2" onclick="saveEventChanges()">Enregistrer les modifications</button>
+                    <button type="button" class="btn btn-danger mx-2" onclick="cancelEventEdit()">Annuler</button>
+                </div>
+            </form>
+        </div>
+        <!-- Formulaire pour Modifier un Événement End -->
+    </div>
+</div>
+
+<script>
+    // Masquer le spinner lorsque le contenu est chargé
+    document.addEventListener("DOMContentLoaded", function() {
+        const spinner = document.getElementById("spinner");
+        if (spinner) {
+            spinner.classList.remove("show");
+        }
+    });
+
+    // Code JavaScript pour gérer la pagination et les événements
+    const events = [
+        { id: 1, date: "2045-01-01", nom: "Événement A", local: "Salle 201", type: "Conférence" },
+        { id: 2, date: "2045-02-05", nom: "Événement B", local: "Salle 202", type: "Atelier" },
+        { id: 3, date: "2045-03-15", nom: "Événement C", local: "Salle 203", type: "Séminaire" },
+        { id: 4, date: "2045-04-20", nom: "Événement D", local: "Salle 204", type: "Conférence" },
+        { id: 5, date: "2045-05-12", nom: "Événement E", local: "Salle 205", type: "Atelier" },
+    ];
+
+    let currentPage = 1;
+    const rowsPerPage = 5;
+
+    function displayEventTable() {
+        const tableBody = document.getElementById("eventTable");
+        tableBody.innerHTML = "";
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const paginatedEvents = events.slice(start, end);
+
+        for (const event of paginatedEvents) {
+            const row = `<tr data-id="${event.id}">
+                <td>${event.id}</td>
+                <td>${event.date}</td>
+                <td>${event.nom}</td>
+                <td>${event.local}</td>
+                <td>${event.type}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning me-2" onclick="editEvent(${event.id})">Modifier</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteEvent(${event.id})">Supprimer</button>
+                </td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        }
+
+        document.getElementById("paginationInfo").textContent = `Page ${currentPage} / ${Math.ceil(events.length / rowsPerPage)}`;
+    }
+
+    function editEvent(id) {
+        const event = events.find(e => e.id === id);
+        if (event) {
+            document.getElementById("editEventId").value = event.id;
+            document.getElementById("editEventNom").value = event.nom;
+            document.getElementById("editEventDate").value = event.date;
+            document.getElementById("editEventLocal").value = event.local;
+            document.getElementById("editEventType").value = event.type;
+            document.getElementById("editEventForm").scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function saveEventChanges() {
+        const id = parseInt(document.getElementById("editEventId").value);
+        const event = events.find(e => e.id === id);
+        if (event) {
+            event.nom = document.getElementById("editEventNom").value;
+            event.date = document.getElementById("editEventDate").value;
+            event.local = document.getElementById("editEventLocal").value;
+            event.type = document.getElementById("editEventType").value;
+            displayEventTable();
+        }
+    }
+
+    function deleteEvent(id) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cet événement ?")) {
+            const index = events.findIndex(e => e.id === id);
+            if (index > -1) {
+                events.splice(index, 1);
+                displayEventTable();
+            }
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayEventTable();
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < Math.ceil(events.length / rowsPerPage)) {
+            currentPage++;
+            displayEventTable();
+        }
+    }
+
+    displayEventTable();
+</script>
+
 </body>
 </html>

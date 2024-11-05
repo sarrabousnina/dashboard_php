@@ -515,12 +515,15 @@
 
 
 
-            <!-- Formations Start -->
+          <!-- Formations Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Formations</h6>
-            <a href="formations.html" class="btn btn-success">Ajouter</a>
+            <div>
+                <a href="formations.html?action=add#addForm" class="btn btn-success me-2">Ajouter</a>
+                <a href="formations.html" class="btn btn-primary">Afficher tout</a>
+            </div>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -544,58 +547,50 @@
                         <td>3 heures</td>
                         <td>Type 1</td>
                         <td>
-                            <a href="formations.html?id=1&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
                         </td>
                     </tr>
+
                     <tr>
                         <td>2</td>
-                        <td>05 Feb 2045</td>
+                        <td>01 Jan 2044</td>
                         <td>Formation B</td>
-                        <td>Salle 102</td>
+                        <td>Salle 111</td>
                         <td>2 heures</td>
                         <td>Type 2</td>
                         <td>
-                            <a href="formations.html?id=2&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
                         </td>
                     </tr>
+
                     <tr>
                         <td>3</td>
-                        <td>12 Mar 2045</td>
+                        <td>01 Jan 2025</td>
                         <td>Formation C</td>
-                        <td>Salle 103</td>
-                        <td>4 heures</td>
-                        <td>Type 3</td>
-                        <td>
-                            <a href="formations.html?id=3&action=edit" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>25 Apr 2045</td>
-                        <td>Formation D</td>
-                        <td>Salle 104</td>
+                        <td>Salle 13</td>
                         <td>3 heures</td>
                         <td>Type 1</td>
                         <td>
-                            <a href="formations.html?id=4&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
                         </td>
                     </tr>
+
                     <tr>
-                        <td>5</td>
-                        <td>15 May 2045</td>
-                        <td>Formation E</td>
-                        <td>Salle 105</td>
-                        <td>2 heures</td>
-                        <td>Type 2</td>
+                        <td>4</td>
+                        <td>05 Jan 2045</td>
+                        <td>Formation D</td>
+                        <td>Salle 202</td>
+                        <td>3 heures</td>
+                        <td>Type 1</td>
                         <td>
-                            <a href="formations.html?id=5&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
                         </td>
                     </tr>
+                    <!-- Ajoutez d'autres lignes de formation ici -->
                 </tbody>
             </table>
         </div>
@@ -603,17 +598,15 @@
 </div>
 <!-- Formations End -->
 
-
-
-
-
-
-           <!-- Evenements Start -->
+<!-- Événements Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Événements</h6>
-            <a href="evenements.html?action=add" class="btn btn-success">Ajouter</a>
+            <div>
+                <a href="evenements.html?action=add#addForm" class="btn btn-success me-2">Ajouter</a>
+                <a href="evenements.html" class="btn btn-primary">Afficher tout</a>
+            </div>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -635,60 +628,53 @@
                         <td>Salle 201</td>
                         <td>Conférence</td>
                         <td>
-                            <a href="evenements.html?id=1&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
                         </td>
                     </tr>
+
                     <tr>
                         <td>2</td>
-                        <td>15 Apr 2045</td>
+                        <td>12 Mar 2030</td>
                         <td>Événement B</td>
                         <td>Salle 202</td>
-                        <td>Atelier</td>
-                        <td>
-                            <a href="evenements.html?id=2&action=edit" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>20 May 2045</td>
-                        <td>Événement C</td>
-                        <td>Salle 203</td>
-                        <td>Webinaire</td>
-                        <td>
-                            <a href="evenements.html?id=3&action=edit" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>05 Jun 2045</td>
-                        <td>Événement D</td>
-                        <td>Salle 204</td>
-                        <td>Formation</td>
-                        <td>
-                            <a href="evenements.html?id=4&action=edit" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>15 Jul 2045</td>
-                        <td>Événement E</td>
-                        <td>Salle 205</td>
                         <td>Conférence</td>
                         <td>
-                            <a href="evenements.html?id=5&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
                             <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>5 Mar 2030</td>
+                        <td>Événement C</td>
+                        <td>Salle 132</td>
+                        <td>Conférence</td>
+                        <td>
+                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>10 Mar 2087</td>
+                        <td>Événement D</td>
+                        <td>Salle 140</td>
+                        <td>Conférence</td>
+                        <td>
+                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <!-- Ajoutez d'autres lignes d'événements ici -->
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Evenements End -->
+<!-- Événements End -->
 
              
             
@@ -927,6 +913,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
     
 </body>
 
