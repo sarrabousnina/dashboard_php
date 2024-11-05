@@ -234,23 +234,25 @@
 
 
 
-            <!-- Recent Sales Start -->
+<!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Livres</h6>
-            <a href="">Add</a>
-            <a href="">Show All</a>
+            <a href="">Ajouter</a>
+            <a href="">Tout Afficher</a>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-white">
-                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col" style="width: 40px;"><input class="form-check-input" type="checkbox"></th>
                         <th scope="col">ID</th>
-                        <th scope="col">Nom</th>
+                        <th scope="col">Titre</th>
                         <th scope="col">Auteur</th>
-                        <th scope="col">Categorie</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Date de Publication</th>
+                        <th scope="col">Disponibilité</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -261,9 +263,13 @@
                         <td>Le Petit Prince</td>
                         <td>Antoine de Saint-Exupéry</td>
                         <td>Littérature</td>
+                        <td>1943-04-06</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(1, 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Littérature', '1943-04-06', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -272,9 +278,13 @@
                         <td>1984</td>
                         <td>George Orwell</td>
                         <td>Science Fiction</td>
+                        <td>1949-06-08</td>
+                        <td>Indisponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(2, '1984', 'George Orwell', 'Science Fiction', '1949-06-08', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -283,9 +293,13 @@
                         <td>Les Misérables</td>
                         <td>Victor Hugo</td>
                         <td>Classique</td>
+                        <td>1862-04-03</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(3, 'Les Misérables', 'Victor Hugo', 'Classique', '1862-04-03', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -294,9 +308,13 @@
                         <td>La Peste</td>
                         <td>Albert Camus</td>
                         <td>Philosophie</td>
+                        <td>1947-09-01</td>
+                        <td>Indisponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(4, 'La Peste', 'Albert Camus', 'Philosophie', '1947-09-01', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -305,9 +323,13 @@
                         <td>Harry Potter à l'école des sorciers</td>
                         <td>J.K. Rowling</td>
                         <td>Fantaisie</td>
+                        <td>1997-06-26</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(5, 'Harry Potter à l\'école des sorciers', 'J.K. Rowling', 'Fantaisie', '1997-06-26', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -317,8 +339,6 @@
 </div>
 <!-- Recent Sales End -->
 
-
-
 <!-- Widgets Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
@@ -326,7 +346,7 @@
         <div class="col-sm-12 col-md-9">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Formulaire de Livre</h6>
-                <form>
+                <form id="bookForm">
                     <!-- Title -->
                     <div class="row mb-3">
                         <label for="inputTitle" class="col-sm-2 col-form-label">Titre</label>
@@ -355,14 +375,6 @@
                                 <option value="Philosophy">Philosophie</option>
                                 <option value="Fantasy">Fantaisie</option>
                             </select>
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div class="row mb-3">
-                        <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="inputDescription" rows="3" placeholder="Entrer la description du livre"></textarea>
                         </div>
                     </div>
 
@@ -411,12 +423,12 @@
         <div class="col-sm-12">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Modifier un Livre</h6>
-                <form>
+                <form id="editBookForm">
                     <!-- ID -->
                     <div class="row mb-3">
-                        <label for="inputBookId" class="col-sm-2 col-form-label">ID</label>
+                        <label for="inputEditBookId" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputBookId" placeholder="Entrer l'ID du livre" required>
+                            <input type="text" class="form-control" id="inputEditBookId" placeholder="Entrer l'ID du livre" required readonly>
                         </div>
                     </div>
 
@@ -451,13 +463,6 @@
                         </div>
                     </div>
 
-                    <!-- Description -->
-                    <div class="row mb-3">
-                        <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="inputEditDescription" rows="3" placeholder="Modifier la description du livre"></textarea>
-                        </div>
-                    </div>
 
                     <!-- Published Date -->
                     <div class="row mb-3">
@@ -490,6 +495,23 @@
     </div>
 </div>
 <!-- Widgets End -->
+
+<script>
+    function populateBookForm(id, title, author, category, pubDate, availability) {
+        // Populate the form fields with the selected book's information
+        document.getElementById('inputEditBookId').value = id; // Set the ID
+        document.getElementById('inputEditTitle').value = title; // Set the title
+        document.getElementById('inputEditAuthor').value = author; // Set the author
+        document.getElementById('inputEditCategory').value = category; // Set the category
+        document.getElementById('inputEditDate').value = pubDate; // Set the publication date
+        // Set the availability
+        document.querySelector(`input[name="editAvailabilityRadios"][value="${availability}"]`).checked = true;
+
+        // Scroll to the "Modifier un Livre" form
+        document.getElementById('editBookForm').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 
 
 

@@ -231,14 +231,13 @@
             </div>
             
 
-
-            <!-- Recent Sales Start -->
+<!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Clubs</h6>
-            <a href="">Show All</a>
-            <a href="">Add</a>
+            <a href="">Tout Afficher</a>
+            <a href="">Ajouter</a>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -247,6 +246,7 @@
                         <th scope="col"><input class="form-check-input" type="checkbox"></th>
                         <th scope="col">ID</th>
                         <th scope="col">Nom</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Date de Création</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
@@ -257,55 +257,70 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>1</td>
                         <td>Club de Lecture</td>
-                        <td>01 Jan 2023</td>
+                        <td>Culturel</td>
+                        <td>01-01-2023</td> <!-- Adjusted date format -->
                         <td>Club dédié à la lecture et aux discussions littéraires</td>
                         <td>
-                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(1, 'Club de Lecture', 'Culturel', '2023-01-01', 'Club dédié à la lecture et aux discussions littéraires')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>2</td>
                         <td>Club de Musique</td>
-                        <td>15 Feb 2023</td>
+                        <td>Culturel</td>
+                        <td>15-02-2023</td> <!-- Adjusted date format -->
                         <td>Club pour les amateurs de musique et d'instruments</td>
                         <td>
-                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(2, 'Club de Musique', 'Culturel', '2023-02-15', 'Club pour les amateurs de musique et d\'instruments')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>3</td>
                         <td>Club de Cuisine</td>
-                        <td>10 Mar 2023</td>
+                        <td>Culinaire</td>
+                        <td>10-03-2023</td> <!-- Adjusted date format -->
                         <td>Ateliers de cuisine pour découvrir de nouvelles recettes</td>
                         <td>
-                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(3, 'Club de Cuisine', 'Culinaire', '2023-03-10', 'Ateliers de cuisine pour découvrir de nouvelles recettes')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>4</td>
                         <td>Club de Photographie</td>
-                        <td>25 Apr 2023</td>
+                        <td>Artistique</td>
+                        <td>25-04-2023</td> <!-- Adjusted date format -->
                         <td>Pour les passionnés de photographie</td>
                         <td>
-                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(4, 'Club de Photographie', 'Artistique', '2023-04-25', 'Pour les passionnés de photographie')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>5</td>
                         <td>Club de Programmation</td>
-                        <td>05 May 2023</td>
+                        <td>Technique</td>
+                        <td>05-05-2023</td> <!-- Adjusted date format -->
                         <td>Club pour apprendre et pratiquer la programmation</td>
                         <td>
-                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(5, 'Club de Programmation', 'Technique', '2023-05-05', 'Club pour apprendre et pratiquer la programmation')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -315,8 +330,6 @@
 </div>
 <!-- Recent Sales End -->
 
-
-
 <!-- Widgets Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
@@ -324,12 +337,12 @@
         <div class="col-sm-12 col-md-8">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Formulaire de Club</h6>
-                <form>
+                <form id="clubForm">
                     <!-- ID -->
                     <div class="row mb-3">
                         <label for="inputID" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputID" placeholder="Entrer l'ID du club">
+                            <input type="text" class="form-control" id="inputID" placeholder="Entrer l'ID du club" required>
                         </div>
                     </div>
 
@@ -394,12 +407,12 @@
         <div class="col-sm-12">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Modifier un Club</h6>
-                <form>
+                <form id="editClubForm">
                     <!-- ID -->
                     <div class="row mb-3">
                         <label for="inputEditID" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEditID" placeholder="Entrer l'ID du club" required>
+                            <input type="text" class="form-control" id="inputEditID" placeholder="Entrer l'ID du club" required readonly>
                         </div>
                     </div>
 
@@ -450,6 +463,21 @@
     </div>
 </div>
 <!-- Widgets End -->
+
+<script>
+    function populateClubForm(id, name, type, creationDate, description) {
+        // Populate the form fields with the selected club's information
+        document.getElementById('inputEditID').value = id; // Set the ID
+        document.getElementById('inputEditNom').value = name; // Set the name
+        document.getElementById('inputEditType').value = type; // Set the type
+        document.getElementById('inputEditDate').value = creationDate; // Set the creation date (ensure correct format)
+        document.getElementById('inputEditDescription').value = description; // Set the description
+
+        // Scroll to the "Modifier un Club" form
+        document.getElementById('editClubForm').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 
 
 
