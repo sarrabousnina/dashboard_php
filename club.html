@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <title>Clubs</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +46,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Université</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -54,12 +54,12 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
+                        <h6 class="mb-0">Wassim</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -68,13 +68,12 @@
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
-                                     <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
-                    <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                   
+                   <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
+<a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
+<a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -114,8 +113,8 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
+                                        <h6 class="fw-normal mb-0">Adminsend you a message</h6>
+                                        <small>3 hours ago</small>
                                     </div>
                                 </div>
                             </a>
@@ -124,8 +123,8 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
+                                        <h6 class="fw-normal mb-0">X send you a message</h6>
+                                        <small>17 minutes ago</small>
                                     </div>
                                 </div>
                             </a>
@@ -134,8 +133,8 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
+                                        <h6 class="fw-normal mb-0">yesser send you a message</h6>
+                                        <small>20 minutes ago</small>
                                     </div>
                                 </div>
                             </a>
@@ -170,7 +169,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                            <span class="d-none d-lg-inline-flex">AdminMajdoub</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
@@ -183,48 +182,217 @@
             <!-- Navbar End -->
 
 
-            <!-- Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Line Chart</h6>
-                            <canvas id="line-chart"></canvas>
+                    <!-- Total Clubs -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 card-fixed-height">
+                            <i class="fa fa-users fa-3x text-primary"></i>
+                            <div class="text-center mt-2">
+                                <p class="mb-2">Nombre Total de Clubs</p>
+                                <h6 class="mb-0">150</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Line Chart</h6>
-                            <canvas id="salse-revenue"></canvas>
+            
+                    <!-- Active Clubs -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 card-fixed-height">
+                            <i class="fa fa-check-circle fa-3x text-primary"></i>
+                            <div class="text-center mt-2">
+                                <p class="mb-2">Clubs Actifs</p>
+                                <h6 class="mb-0">120</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Bar Chart</h6>
-                            <canvas id="bar-chart"></canvas>
+            
+                    <!-- New Clubs This Month -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 card-fixed-height">
+                            <i class="fa fa-calendar-plus fa-3x text-primary"></i>
+                            <div class="text-center mt-2">
+                                <p class="mb-2">Nouveaux Clubs ce Mois</p>
+                                <h6 class="mb-0">10</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Bar Chart</h6>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Pie Chart</h6>
-                            <canvas id="pie-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Doughnut Chart</h6>
-                            <canvas id="doughnut-chart"></canvas>
+            
+                    <!-- Clubs by Type -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 card-fixed-height">
+                            <i class="fa fa-list-alt fa-3x text-primary"></i>
+                            <div class="text-center mt-2">
+                                <p class="mb-2">Types de Clubs</p>
+                                <h6 class="mb-0">5 Types</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Chart End -->
+            
+
+
+            <!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Clubs</h6>
+            <a href="">Show All</a>
+            <a href="">Add</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date de Création</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>1</td>
+                        <td>Club de Lecture</td>
+                        <td>01 Jan 2023</td>
+                        <td>Club dédié à la lecture et aux discussions littéraires</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>2</td>
+                        <td>Club de Musique</td>
+                        <td>15 Feb 2023</td>
+                        <td>Club pour les amateurs de musique et d'instruments</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>3</td>
+                        <td>Club de Cuisine</td>
+                        <td>10 Mar 2023</td>
+                        <td>Ateliers de cuisine pour découvrir de nouvelles recettes</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>4</td>
+                        <td>Club de Photographie</td>
+                        <td>25 Apr 2023</td>
+                        <td>Pour les passionnés de photographie</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>5</td>
+                        <td>Club de Programmation</td>
+                        <td>05 May 2023</td>
+                        <td>Club pour apprendre et pratiquer la programmation</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
+
+
+
+
+<!-- Widgets Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <!-- Club Form Column (2/3 of the space) -->
+        <div class="col-sm-12 col-md-8">
+            <div class="bg-secondary rounded p-4 border border-light">
+                <h6 class="mb-4">Formulaire de Club</h6>
+                <form>
+                    <!-- ID -->
+                    <div class="row mb-3">
+                        <label for="inputID" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputID" placeholder="Entrer l'ID du club">
+                        </div>
+                    </div>
+
+                    <!-- Nom -->
+                    <div class="row mb-3">
+                        <label for="inputNom" class="col-sm-2 col-form-label">Nom</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNom" placeholder="Entrer le nom du club">
+                        </div>
+                    </div>
+
+                    <!-- Type (Moved here after Nom) -->
+                    <div class="row mb-3">
+                        <label for="inputType" class="col-sm-2 col-form-label">Type</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="inputType">
+                                <option value="">Sélectionner le type de club</option>
+                                <option value="Culturel">Culturel</option>
+                                <option value="Littéraire">Littéraire</option>
+                                <option value="Culinaire">Culinaire</option>
+                                <option value="Artistique">Artistique</option>
+                                <option value="Technique">Technique</option>
+                                <!-- Add more types as needed -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Date de Création -->
+                    <div class="row mb-3">
+                        <label for="inputDate" class="col-sm-2 col-form-label">Date de Création</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="inputDate">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="row mb-3">
+                        <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="inputDescription" rows="3" placeholder="Entrer la description du club"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Enregistrer le Club</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Calendar Column (1/3 of the space) -->
+        <div class="col-sm-12 col-md-4">
+            <div class="h-100 bg-secondary rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Calendrier</h6>
+                </div>
+                <div id="calender"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Widgets End -->
+
 
 
             <!-- Footer Start -->
@@ -232,12 +400,12 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
+                            &copy; <a href="#"></a>Université, All Right Reserved. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            Designed By <a href="https://htmlcodex.com">Fantomes</a>
+                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">Fantomes</a>
                         </div>
                     </div>
                 </div>

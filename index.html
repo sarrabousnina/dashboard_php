@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>University</title>
+    <title>Université</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +46,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>University</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Université</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -54,7 +54,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Wassim</h6>
+                        <h6 class="mb-0">Admin</h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -71,7 +71,10 @@
                         <a href="formations.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Formations</a>
                         <a href="evenements.html" class="nav-item nav-link"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
                     </div>
+                    <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
+                    <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                   
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
@@ -114,7 +117,7 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Wassim send you a message</h6>
+                                        <h6 class="fw-normal mb-0">Adminsend you a message</h6>
                                         <small>3 hours ago</small>
                                     </div>
                                 </div>
@@ -170,7 +173,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Wassim Majdoub</span>
+                            <span class="d-none d-lg-inline-flex">Admin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
@@ -183,48 +186,56 @@
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Statistiques des Entités Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-3">
+        <!-- Utilisateurs -->
+        <div class="col">
+            <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                <i class="fa fa-users fa-3x text-primary mb-2"></i>
+                <p class="mb-1 text-center">Nombre d'Utilisateurs</p>
+                <h6 class="mb-0">500</h6>
             </div>
-            <!-- Sale & Revenue End -->
+        </div>
+
+        <!-- Livres -->
+        <div class="col">
+            <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                <i class="fa fa-book fa-3x text-primary mb-2"></i>
+                <p class="mb-1 text-center">Nombre de Livres</p>
+                <h6 class="mb-0">250</h6>
+            </div>
+        </div>
+
+        <!-- Clubs -->
+        <div class="col">
+            <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                <i class="fa fa-building fa-3x text-primary mb-2"></i>
+                <p class="mb-1 text-center">Nombre de Clubs</p>
+                <h6 class="mb-0">50</h6>
+            </div>
+        </div>
+
+        <!-- Événements -->
+        <div class="col">
+            <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                <i class="fa fa-calendar fa-3x text-primary mb-2"></i>
+                <p class="mb-1 text-center">Nombre d'Événements</p>
+                <h6 class="mb-0">30</h6>
+            </div>
+        </div>
+
+        <!-- Formations -->
+        <div class="col">
+            <div class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                <i class="fa fa-chalkboard-teacher fa-3x text-primary mb-2"></i>
+                <p class="mb-1 text-center">Nombre de Formations</p>
+                <h6 class="mb-0">20</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Statistiques des Entités End -->
 
 
             <!-- Sales Chart Start -->
@@ -331,159 +342,176 @@
 
 
 
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Clubs</h6>
-                        <a href="">Show All</a>
-                        <a href="">Add</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
-
-
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Livres</h6>
-                        <a href="">Add</a>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
+        <!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Clubs</h6>
+            <a href="">Show All</a>
+            <a href="">Add</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date de Création</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>1</td>
+                        <td>Club de Lecture</td>
+                        <td>01 Jan 2023</td>
+                        <td>Club dédié à la lecture et aux discussions littéraires</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>2</td>
+                        <td>Club de Musique</td>
+                        <td>15 Feb 2023</td>
+                        <td>Club pour les amateurs de musique et d'instruments</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>3</td>
+                        <td>Club de Cuisine</td>
+                        <td>10 Mar 2023</td>
+                        <td>Ateliers de cuisine pour découvrir de nouvelles recettes</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>4</td>
+                        <td>Club de Photographie</td>
+                        <td>25 Apr 2023</td>
+                        <td>Pour les passionnés de photographie</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>5</td>
+                        <td>Club de Programmation</td>
+                        <td>05 May 2023</td>
+                        <td>Club pour apprendre et pratiquer la programmation</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="club.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
 
 
+
+
+
+
+        <!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Livres</h6>
+            <a href="">Add</a>
+            <a href="">Show All</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Auteur</th>
+                        <th scope="col">Categorie</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>1</td>
+                        <td>Le Petit Prince</td>
+                        <td>Antoine de Saint-Exupéry</td>
+                        <td>Littérature</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>2</td>
+                        <td>1984</td>
+                        <td>George Orwell</td>
+                        <td>Science Fiction</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>3</td>
+                        <td>Les Misérables</td>
+                        <td>Victor Hugo</td>
+                        <td>Classique</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>4</td>
+                        <td>La Peste</td>
+                        <td>Albert Camus</td>
+                        <td>Philosophie</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox"></td>
+                        <td>5</td>
+                        <td>Harry Potter à l'école des sorciers</td>
+                        <td>J.K. Rowling</td>
+                        <td>Fantaisie</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
 
 
 
@@ -867,7 +895,7 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#"></a>University, All Right Reserved. 
+                            &copy; <a href="#"></a>Université, tous les droits reservés. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -899,6 +927,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>
