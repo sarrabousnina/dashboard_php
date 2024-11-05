@@ -67,6 +67,9 @@
                             <a href="typography.html" class="dropdown-item">Typography</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
+                        <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <a href="formations.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Formations</a>
+                        <a href="evenements.html" class="nav-item nav-link"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
@@ -484,156 +487,181 @@
 
 
 
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Formations</h6>
-                        <a href="">Add</a>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
+            <!-- Formations Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Formations</h6>
+            <a href="formations.html" class="btn btn-success">Ajouter</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Local</th>
+                        <th scope="col">Durée</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>01 Jan 2045</td>
+                        <td>Formation A</td>
+                        <td>Salle 101</td>
+                        <td>3 heures</td>
+                        <td>Type 1</td>
+                        <td>
+                            <a href="formations.html?id=1&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>05 Feb 2045</td>
+                        <td>Formation B</td>
+                        <td>Salle 102</td>
+                        <td>2 heures</td>
+                        <td>Type 2</td>
+                        <td>
+                            <a href="formations.html?id=2&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>12 Mar 2045</td>
+                        <td>Formation C</td>
+                        <td>Salle 103</td>
+                        <td>4 heures</td>
+                        <td>Type 3</td>
+                        <td>
+                            <a href="formations.html?id=3&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>25 Apr 2045</td>
+                        <td>Formation D</td>
+                        <td>Salle 104</td>
+                        <td>3 heures</td>
+                        <td>Type 1</td>
+                        <td>
+                            <a href="formations.html?id=4&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>15 May 2045</td>
+                        <td>Formation E</td>
+                        <td>Salle 105</td>
+                        <td>2 heures</td>
+                        <td>Type 2</td>
+                        <td>
+                            <a href="formations.html?id=5&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Formations End -->
 
 
 
 
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Evenements</h6>
-                        <a href="">Show All</a>
-                        <a href="">Add</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->  
+
+
+           <!-- Evenements Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Événements</h6>
+            <a href="evenements.html?action=add" class="btn btn-success">Ajouter</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Local</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10 Mar 2045</td>
+                        <td>Événement A</td>
+                        <td>Salle 201</td>
+                        <td>Conférence</td>
+                        <td>
+                            <a href="evenements.html?id=1&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>15 Apr 2045</td>
+                        <td>Événement B</td>
+                        <td>Salle 202</td>
+                        <td>Atelier</td>
+                        <td>
+                            <a href="evenements.html?id=2&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>20 May 2045</td>
+                        <td>Événement C</td>
+                        <td>Salle 203</td>
+                        <td>Webinaire</td>
+                        <td>
+                            <a href="evenements.html?id=3&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>05 Jun 2045</td>
+                        <td>Événement D</td>
+                        <td>Salle 204</td>
+                        <td>Formation</td>
+                        <td>
+                            <a href="evenements.html?id=4&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>15 Jul 2045</td>
+                        <td>Événement E</td>
+                        <td>Salle 205</td>
+                        <td>Conférence</td>
+                        <td>
+                            <a href="evenements.html?id=5&action=edit" class="btn btn-sm btn-primary">Modifier</a>
+                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Evenements End -->
+
              
             
 
