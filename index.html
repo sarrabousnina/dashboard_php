@@ -42,55 +42,33 @@
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Université</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Admin</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
-                        </div>
-                 
-                        <a href="formations.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Formations</a>
-                        <a href="evenements.html" class="nav-item nav-link"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
-                    </div>
-                    <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
-                    <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                   
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+<!-- Sidebar Start -->
+<div class="sidebar pe-4 pb-3">
+    <nav class="navbar bg-secondary navbar-dark">
+        <a href="index.html" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Université</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Admin</h6>
+                <span>Admin</span>
+            </div>
         </div>
-        <!-- Sidebar End -->
+        <div class="navbar-nav w-100">
+            <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="formations.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Formations</a>
+            <a href="evenements.html" class="nav-item nav-link"><i class="fa fa-calendar-alt me-2"></i>Événements</a>
+            <a href="livres.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Livres</a>
+            <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
+        </div>
+    </nav>
+</div>
+<!-- Sidebar End -->
+
 
 
         <!-- Content Start -->
@@ -347,8 +325,8 @@
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Clubs</h6>
-            <a href="">Show All</a>
-            <a href="">Add</a>
+            <a href="">Tout Afficher</a>
+            <a href="">Ajouter</a>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -357,6 +335,7 @@
                         <th scope="col"><input class="form-check-input" type="checkbox"></th>
                         <th scope="col">ID</th>
                         <th scope="col">Nom</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Date de Création</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
@@ -367,11 +346,12 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>1</td>
                         <td>Club de Lecture</td>
-                        <td>01 Jan 2023</td>
+                        <td>Culturel</td>
+                        <td>01-01-2023</td> <!-- Adjusted date format -->
                         <td>Club dédié à la lecture et aux discussions littéraires</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="club.html">Modifier</a>
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(1, 'Club de Lecture', 'Culturel', '2023-01-01', 'Club dédié à la lecture et aux discussions littéraires')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -380,11 +360,12 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>2</td>
                         <td>Club de Musique</td>
-                        <td>15 Feb 2023</td>
+                        <td>Culturel</td>
+                        <td>15-02-2023</td> <!-- Adjusted date format -->
                         <td>Club pour les amateurs de musique et d'instruments</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="club.html">Modifier</a>
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(2, 'Club de Musique', 'Culturel', '2023-02-15', 'Club pour les amateurs de musique et d\'instruments')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -393,11 +374,12 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>3</td>
                         <td>Club de Cuisine</td>
-                        <td>10 Mar 2023</td>
+                        <td>Culinaire</td>
+                        <td>10-03-2023</td> <!-- Adjusted date format -->
                         <td>Ateliers de cuisine pour découvrir de nouvelles recettes</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="club.html">Modifier</a>
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(3, 'Club de Cuisine', 'Culinaire', '2023-03-10', 'Ateliers de cuisine pour découvrir de nouvelles recettes')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -406,11 +388,12 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>4</td>
                         <td>Club de Photographie</td>
-                        <td>25 Apr 2023</td>
+                        <td>Artistique</td>
+                        <td>25-04-2023</td> <!-- Adjusted date format -->
                         <td>Pour les passionnés de photographie</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="club.html">Modifier</a>
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(4, 'Club de Photographie', 'Artistique', '2023-04-25', 'Pour les passionnés de photographie')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -419,11 +402,12 @@
                         <td><input class="form-check-input" type="checkbox"></td>
                         <td>5</td>
                         <td>Club de Programmation</td>
-                        <td>05 May 2023</td>
+                        <td>Technique</td>
+                        <td>05-05-2023</td> <!-- Adjusted date format -->
                         <td>Club pour apprendre et pratiquer la programmation</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="club.html">Modifier</a>
+                                <a class="btn btn-sm btn-warning me-2" href="javascript:void(0);" onclick="populateClubForm(5, 'Club de Programmation', 'Technique', '2023-05-05', 'Club pour apprendre et pratiquer la programmation')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -437,27 +421,25 @@
 
 
 
-
-
-
-
-        <!-- Recent Sales Start -->
+<!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Livres</h6>
-            <a href="">Add</a>
-            <a href="">Show All</a>
+            <a href="">Ajouter</a>
+            <a href="">Tout Afficher</a>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-white">
-                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col" style="width: 40px;"><input class="form-check-input" type="checkbox"></th>
                         <th scope="col">ID</th>
-                        <th scope="col">Nom</th>
+                        <th scope="col">Titre</th>
                         <th scope="col">Auteur</th>
-                        <th scope="col">Categorie</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Date de Publication</th>
+                        <th scope="col">Disponibilité</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -468,9 +450,13 @@
                         <td>Le Petit Prince</td>
                         <td>Antoine de Saint-Exupéry</td>
                         <td>Littérature</td>
+                        <td>1943-04-06</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(1, 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Littérature', '1943-04-06', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -479,9 +465,13 @@
                         <td>1984</td>
                         <td>George Orwell</td>
                         <td>Science Fiction</td>
+                        <td>1949-06-08</td>
+                        <td>Indisponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(2, '1984', 'George Orwell', 'Science Fiction', '1949-06-08', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -490,9 +480,13 @@
                         <td>Les Misérables</td>
                         <td>Victor Hugo</td>
                         <td>Classique</td>
+                        <td>1862-04-03</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(3, 'Les Misérables', 'Victor Hugo', 'Classique', '1862-04-03', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -501,9 +495,13 @@
                         <td>La Peste</td>
                         <td>Albert Camus</td>
                         <td>Philosophie</td>
+                        <td>1947-09-01</td>
+                        <td>Indisponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(4, 'La Peste', 'Albert Camus', 'Philosophie', '1947-09-01', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -512,9 +510,13 @@
                         <td>Harry Potter à l'école des sorciers</td>
                         <td>J.K. Rowling</td>
                         <td>Fantaisie</td>
+                        <td>1997-06-26</td>
+                        <td>Disponible</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="livres.html">Modifier</a>
-                            <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(5, 'Harry Potter à l\'école des sorciers', 'J.K. Rowling', 'Fantaisie', '1997-06-26', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -523,7 +525,6 @@
     </div>
 </div>
 <!-- Recent Sales End -->
-
 
 
           <!-- Formations Start -->
@@ -828,7 +829,7 @@
                                 <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Wassim</h6>
+                                        <h6 class="mb-0">Admin</h6>
                                         <small>15 minutes ago</small>
                                     </div>
                                     <span>Short message goes here...</span>
