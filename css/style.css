@@ -1,13 +1,14 @@
-/********** Updated Template CSS with Navy Theme **********/
+/********** Updated Template CSS with Navy Theme and Rounded Elements **********/
 :root {
     --primary: #4A90E2; /* Light blue for primary accents */
     --secondary: #002261; /* Navy blue for the main background */
-    --card-background: #F3F6FB; /* Light gray-blue for card backgrounds */
+    --card-background: #e2e6ece1; /* Light gray-blue for card backgrounds */
     --light: #8A9BAB; /* Medium gray-blue for secondary text */
     --dark: #1A1A2E; /* Dark gray for accents and borders */
     --highlight-red: #FF6B6B; /* Soft red for notifications and highlights */
     --text-primary: #FFFFFF; /* White for primary text */
     --text-secondary: #C0C0C0; /* Light gray for secondary text */
+    --border-radius: 16px; /* Standard border radius for a rounded theme */
 }
 
 /*** General Elements ***/
@@ -50,7 +51,8 @@
     transition: .5s;
     color: #FFFFFF;
     background: var(--primary);
-    border-radius: 8px;
+    border-radius: var(--border-radius); /* Rounded buttons */
+    padding: 8px 16px;
 }
 
 .btn:hover {
@@ -60,35 +62,38 @@
 .btn-square {
     width: 38px;
     height: 38px;
+    border-radius: var(--border-radius); /* Rounded corners */
 }
 
 .btn-lg-square {
     width: 48px;
     height: 48px;
+    border-radius: var(--border-radius); /* Rounded corners */
 }
 
-/*** Layout ***/
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 250px;
+    width: 270px; /* Further increased width to cover the black gap */
     height: 100vh;
     overflow-y: auto;
     background: var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-right: 1px solid #E0E0E5;
     transition: 0.5s;
     z-index: 999;
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 270px; /* Adjusted to match the new sidebar width */
     min-height: 100vh;
     background: var(--card-background);
     padding: 20px;
     transition: 0.5s;
 }
+
 
 @media (min-width: 992px) {
     .sidebar {
@@ -125,6 +130,14 @@
 }
 
 /*** Navbar ***/
+.content .navbar {
+    background: var(--secondary);
+    border-radius: var(--border-radius); /* Rounded navbar */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .sidebar .navbar .navbar-nav .nav-link {
     padding: 10px 20px;
     color: var(--light);
@@ -172,27 +185,26 @@
     align-items: center;
     justify-content: center;
     background: var(--card-background);
-    border-radius: 50%;
+    border-radius: 50%; /* Fully rounded */
     color: var(--primary);
 }
 
 /*** Card Styles ***/
 .card {
     background: var(--card-background);
-    border-radius: 12px;
+    border-radius: var(--border-radius); /* Rounded cards */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.card-header {
-    font-weight: bold;
-    color: var(--text-primary);
-}
-
-.card-number {
-    color: var(--primary);
-    font-size: 24px;
-    font-weight: bold;
+/*** Charts ***/
+.chart-container {
+    background: var(--card-background);
+    border-radius: var(--border-radius); /* Rounded charts */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 /*** Text Colors ***/
@@ -207,6 +219,7 @@ p, span, a {
 /*** Chart Colors ***/
 .chart-bar {
     background: var(--highlight-red);
+    border-radius: var(--border-radius); /* Rounded bars */
 }
 
 .chart-line {
@@ -229,7 +242,7 @@ p, span, a {
 
 .bootstrap-datetimepicker-widget.dropdown-menu {
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius); /* Rounded date picker */
     background: var(--secondary);
 }
 
@@ -248,6 +261,7 @@ p, span, a {
     width: 0px;
     transition: 2s;
     background: var(--primary);
+    border-radius: var(--border-radius); /* Rounded progress bar */
 }
 
 .testimonial-carousel .owl-dot {
@@ -257,7 +271,7 @@ p, span, a {
     width: 15px;
     height: 15px;
     border: 5px solid var(--primary);
-    border-radius: 50%;
+    border-radius: 50%; /* Fully rounded dots */
     transition: .5s;
 }
 
