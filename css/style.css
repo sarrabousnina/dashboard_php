@@ -1,19 +1,35 @@
-/********** Template CSS **********/
+/********** Updated Template CSS with Navy Theme **********/
 :root {
-    --primary: #EB1616;
-    --secondary: #191C24;
-    --light: #6C7293;
-    --dark: #000000;
+    --primary: #4A90E2; /* Light blue for primary accents */
+    --secondary: #002261; /* Navy blue for the main background */
+    --card-background: #F3F6FB; /* Light gray-blue for card backgrounds */
+    --light: #8A9BAB; /* Medium gray-blue for secondary text */
+    --dark: #1A1A2E; /* Dark gray for accents and borders */
+    --highlight-red: #FF6B6B; /* Soft red for notifications and highlights */
+    --text-primary: #FFFFFF; /* White for primary text */
+    --text-secondary: #C0C0C0; /* Light gray for secondary text */
 }
 
+/*** General Elements ***/
 .back-to-top {
     position: fixed;
     display: none;
     right: 45px;
     bottom: 45px;
     z-index: 99;
+    background: var(--primary);
+    color: #FFFFFF;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.back-to-top:hover {
+    background: var(--highlight-red);
+}
 
 /*** Spinner ***/
 #spinner {
@@ -29,10 +45,16 @@
     opacity: 1;
 }
 
-
 /*** Button ***/
 .btn {
     transition: .5s;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background: var(--highlight-red);
 }
 
 .btn-square {
@@ -40,27 +62,10 @@
     height: 38px;
 }
 
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
 .btn-lg-square {
     width: 48px;
     height: 48px;
 }
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-    border-radius: 50px;
-}
-
 
 /*** Layout ***/
 .sidebar {
@@ -72,6 +77,7 @@
     height: 100vh;
     overflow-y: auto;
     background: var(--secondary);
+    border-right: 1px solid #E0E0E5;
     transition: 0.5s;
     z-index: 999;
 }
@@ -79,7 +85,8 @@
 .content {
     margin-left: 250px;
     min-height: 100vh;
-    background: var(--dark);
+    background: var(--card-background);
+    padding: 20px;
     transition: 0.5s;
 }
 
@@ -117,21 +124,20 @@
     }
 }
 
-
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
-    padding: 7px 20px;
+    padding: 10px 20px;
     color: var(--light);
     font-weight: 500;
-    border-left: 3px solid var(--secondary);
-    border-radius: 0 30px 30px 0;
-    outline: none;
+    border-left: 3px solid transparent;
+    transition: background 0.3s, border-color 0.3s;
+    border-radius: 8px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
-    background: var(--dark);
+    background: var(--card-background);
     border-color: var(--primary);
 }
 
@@ -141,45 +147,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
-    border-radius: 40px;
-}
-
-.sidebar .navbar .navbar-nav .nav-link:hover i,
-.sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--secondary);
-}
-
-.sidebar .navbar .dropdown-toggle::after {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transition: .5s;
-}
-
-.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
-}
-
-.sidebar .navbar .dropdown-item {
-    padding-left: 25px;
-    border-radius: 0 30px 30px 0;
-    color: var(--light);
-}
-
-.sidebar .navbar .dropdown-item:hover,
-.sidebar .navbar .dropdown-item.active {
-    background: var(--dark);
+    background: var(--card-background);
+    color: var(--primary);
+    border-radius: 50%;
 }
 
 .content .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 12px 0;
-    color: var(--light);
+    color: var(--text-secondary);
     outline: none;
 }
 
@@ -195,39 +171,47 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
-    border-radius: 40px;
+    background: var(--card-background);
+    border-radius: 50%;
+    color: var(--primary);
 }
 
-.content .navbar .dropdown-item {
-    color: var(--light);
+/*** Card Styles ***/
+.card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content .navbar .dropdown-item:hover,
-.content .navbar .dropdown-item.active {
-    background: var(--dark);
+.card-header {
+    font-weight: bold;
+    color: var(--text-primary);
 }
 
-.content .navbar .dropdown-toggle::after {
-    margin-left: 6px;
-    vertical-align: middle;
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transition: .5s;
+.card-number {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.content .navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
+/*** Text Colors ***/
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
 }
 
-@media (max-width: 575.98px) {
-    .content .navbar .navbar-nav .nav-link {
-        margin-left: 15px;
-    }
+p, span, a {
+    color: var(--text-secondary);
 }
 
+/*** Chart Colors ***/
+.chart-bar {
+    background: var(--highlight-red);
+}
+
+.chart-line {
+    color: var(--primary);
+}
 
 /*** Date Picker ***/
 .bootstrap-datetimepicker-widget.bottom {
@@ -240,36 +224,30 @@
 
 .bootstrap-datetimepicker-widget .table th {
     font-weight: 500;
+    color: var(--text-primary);
 }
 
 .bootstrap-datetimepicker-widget.dropdown-menu {
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 8px;
+    background: var(--secondary);
 }
 
 .bootstrap-datetimepicker-widget table td.active,
 .bootstrap-datetimepicker-widget table td.active:hover {
     background: var(--primary);
+    color: #FFFFFF;
 }
 
 .bootstrap-datetimepicker-widget table td.today::before {
     border-bottom-color: var(--primary);
 }
 
-
 /*** Testimonial ***/
 .progress .progress-bar {
     width: 0px;
     transition: 2s;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    background: var(--primary);
 }
 
 .testimonial-carousel .owl-dot {
@@ -279,11 +257,11 @@
     width: 15px;
     height: 15px;
     border: 5px solid var(--primary);
-    border-radius: 15px;
+    border-radius: 50%;
     transition: .5s;
 }
 
 .testimonial-carousel .owl-dot.active {
-    background: var(--dark);
+    background: var(--highlight-red);
     border-color: var(--primary);
 }
