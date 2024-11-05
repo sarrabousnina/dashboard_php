@@ -237,6 +237,7 @@
                         <th scope="col">Catégorie</th>
                         <th scope="col">Date de Publication</th>
                         <th scope="col">Disponibilité</th>
+                        <th scope="col">Description</th> <!-- New Description column header -->
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -249,9 +250,10 @@
                         <td>Littérature</td>
                         <td>1943-04-06</td>
                         <td>Disponible</td>
+                        <td>Un conte philosophique et poétique.</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(1, 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Littérature', '1943-04-06', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(1, 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Littérature', '1943-04-06', 'available', 'Un conte philosophique et poétique.')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -264,9 +266,10 @@
                         <td>Science Fiction</td>
                         <td>1949-06-08</td>
                         <td>Indisponible</td>
+                        <td>Un roman dystopique sur une société totalitaire.</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(2, '1984', 'George Orwell', 'Science Fiction', '1949-06-08', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(2, '1984', 'George Orwell', 'Science Fiction', '1949-06-08', 'unavailable', 'Un roman dystopique sur une société totalitaire.')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -279,9 +282,10 @@
                         <td>Classique</td>
                         <td>1862-04-03</td>
                         <td>Disponible</td>
+                        <td>Une histoire sur la justice et la rédemption.</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(3, 'Les Misérables', 'Victor Hugo', 'Classique', '1862-04-03', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(3, 'Les Misérables', 'Victor Hugo', 'Classique', '1862-04-03', 'available', 'Une histoire sur la justice et la rédemption.')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -294,9 +298,10 @@
                         <td>Philosophie</td>
                         <td>1947-09-01</td>
                         <td>Indisponible</td>
+                        <td>Une métaphore de la lutte contre le mal.</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(4, 'La Peste', 'Albert Camus', 'Philosophie', '1947-09-01', 'unavailable')">Modifier</a>
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(4, 'La Peste', 'Albert Camus', 'Philosophie', '1947-09-01', 'unavailable', 'Une métaphore de la lutte contre le mal.')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -309,9 +314,10 @@
                         <td>Fantaisie</td>
                         <td>1997-06-26</td>
                         <td>Disponible</td>
+                        <td>Le début des aventures du jeune sorcier Harry Potter.</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(5, 'Harry Potter à l\'école des sorciers', 'J.K. Rowling', 'Fantaisie', '1997-06-26', 'available')">Modifier</a>
+                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(5, 'Harry Potter à l\'école des sorciers', 'J.K. Rowling', 'Fantaisie', '1997-06-26', 'available', 'Le début des aventures du jeune sorcier Harry Potter.')">Modifier</a>
                                 <a class="btn btn-sm btn-danger" href="">Supprimer</a>
                             </div>
                         </td>
@@ -321,7 +327,9 @@
         </div>
     </div>
 </div>
+
 <!-- Recent Sales End -->
+
 
 <!-- Widgets Start -->
 <div class="container-fluid pt-4 px-4">
@@ -367,6 +375,13 @@
                         <label for="inputDate" class="col-sm-2 col-form-label">Date de Publication</label>
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="inputDate">
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="row mb-3">
+                        <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="inputEditDescription" placeholder="Modifier la description du livre"></textarea>
                         </div>
                     </div>
 
@@ -455,6 +470,14 @@
                             <input type="date" class="form-control" id="inputEditDate">
                         </div>
                     </div>
+                        <!-- Description -->
+                        <div class="row mb-3">
+                            <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="inputEditDescription" placeholder="Modifier la description du livre"></textarea>
+                            </div>
+                        </div>
+
 
                     <!-- Availability (Radios) -->
                     <fieldset class="row mb-3">
@@ -481,13 +504,15 @@
 <!-- Widgets End -->
 
 <script>
-    function populateBookForm(id, title, author, category, pubDate, availability) {
+    function populateBookForm(id, title, author, category, pubDate, availability, description) {
         // Populate the form fields with the selected book's information
         document.getElementById('inputEditBookId').value = id; // Set the ID
         document.getElementById('inputEditTitle').value = title; // Set the title
         document.getElementById('inputEditAuthor').value = author; // Set the author
         document.getElementById('inputEditCategory').value = category; // Set the category
         document.getElementById('inputEditDate').value = pubDate; // Set the publication date
+        document.getElementById('inputEditDescription').value = description; // Set the description
+
         // Set the availability
         document.querySelector(`input[name="editAvailabilityRadios"][value="${availability}"]`).checked = true;
 
@@ -495,6 +520,7 @@
         document.getElementById('editBookForm').scrollIntoView({ behavior: 'smooth' });
     }
 </script>
+
 
 
 
