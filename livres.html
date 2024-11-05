@@ -319,11 +319,10 @@
 
 
 
-
-          <!-- Widgets Start -->
+<!-- Widgets Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
-        <!-- Form Column (8/12 columns or 2/3) with Border and Padding -->
+        <!-- Form Column (8/12 columns) -->
         <div class="col-sm-12 col-md-9">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Formulaire de Livre</h6>
@@ -381,31 +380,14 @@
                         <div class="col-sm-10">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="availabilityRadios" id="available" value="available" checked>
-                                <label class="form-check-label" for="available">
-                                    Disponible
-                                </label>
+                                <label class="form-check-label" for="available">Disponible</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="availabilityRadios" id="unavailable" value="unavailable">
-                                <label class="form-check-label" for="unavailable">
-                                    Indisponible
-                                </label>
+                                <label class="form-check-label" for="unavailable">Indisponible</label>
                             </div>
                         </div>
                     </fieldset>
-
-                    <!-- Featured (Checkbox) -->
-                    <div class="row mb-3">
-                        <legend class="col-form-label col-sm-2 pt-0">Mis en Avant</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="featuredCheck">
-                                <label class="form-check-label" for="featuredCheck">
-                                    Marquer comme mis en avant
-                                </label>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Enregistrer le Livre</button>
@@ -413,7 +395,7 @@
             </div>
         </div>
 
-        <!-- Calendar Column (3/12 columns or 1/4) -->
+        <!-- Calendar Column (3/12 columns) -->
         <div class="col-sm-12 col-md-3">
             <div class="h-100 bg-secondary rounded p-4">
                 <div class="d-flex align-items-center justify-content-between mb-4">
@@ -423,8 +405,92 @@
             </div>
         </div>
     </div>
+
+    <!-- Modifier un Livre Column (Full Width) -->
+    <div class="row g-4 mt-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded p-4 border border-light">
+                <h6 class="mb-4">Modifier un Livre</h6>
+                <form>
+                    <!-- ID -->
+                    <div class="row mb-3">
+                        <label for="inputBookId" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputBookId" placeholder="Entrer l'ID du livre" required>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="row mb-3">
+                        <label for="inputEditTitle" class="col-sm-2 col-form-label">Titre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEditTitle" placeholder="Modifier le titre du livre">
+                        </div>
+                    </div>
+
+                    <!-- Author -->
+                    <div class="row mb-3">
+                        <label for="inputEditAuthor" class="col-sm-2 col-form-label">Auteur</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEditAuthor" placeholder="Modifier le nom de l'auteur">
+                        </div>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="row mb-3">
+                        <label for="inputEditCategory" class="col-sm-2 col-form-label">Catégorie</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="inputEditCategory">
+                                <option value="">Sélectionner une catégorie</option>
+                                <option value="Literature">Littérature</option>
+                                <option value="Science Fiction">Science-Fiction</option>
+                                <option value="Classics">Classiques</option>
+                                <option value="Philosophy">Philosophie</option>
+                                <option value="Fantasy">Fantaisie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="row mb-3">
+                        <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="inputEditDescription" rows="3" placeholder="Modifier la description du livre"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Published Date -->
+                    <div class="row mb-3">
+                        <label for="inputEditDate" class="col-sm-2 col-form-label">Date de Publication</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="inputEditDate">
+                        </div>
+                    </div>
+
+                    <!-- Availability (Radios) -->
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Disponibilité</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="editAvailabilityRadios" id="editAvailable" value="available" checked>
+                                <label class="form-check-label" for="editAvailable">Disponible</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="editAvailabilityRadios" id="editUnavailable" value="unavailable">
+                                <label class="form-check-label" for="editUnavailable">Indisponible</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Modifier le Livre</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Widgets End -->
+
 
 
 
