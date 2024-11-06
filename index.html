@@ -490,262 +490,123 @@
 <!-- Recent Sales End -->
 
 
-          <!-- Formations Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="bg-secondary text-center rounded p-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Formations</h6>
-            <div>
-                <a href="formations.html?action=add#addForm" class="btn btn-success me-2">Ajouter</a>
-                <a href="formations.html" class="btn btn-primary">Afficher tout</a>
-            </div>
-        </div>
-        <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                <thead>
-                    <tr class="text-white">
-                        <th scope="col">ID</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Local</th>
-                        <th scope="col">Durée</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>01 Jan 2045</td>
-                        <td>Formation A</td>
-                        <td>Salle 101</td>
-                        <td>3 heures</td>
-                        <td>Type 1</td>
-                        <td>
-                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>01 Jan 2044</td>
-                        <td>Formation B</td>
-                        <td>Salle 111</td>
-                        <td>2 heures</td>
-                        <td>Type 2</td>
-                        <td>
-                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>01 Jan 2025</td>
-                        <td>Formation C</td>
-                        <td>Salle 13</td>
-                        <td>3 heures</td>
-                        <td>Type 1</td>
-                        <td>
-                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>05 Jan 2045</td>
-                        <td>Formation D</td>
-                        <td>Salle 202</td>
-                        <td>3 heures</td>
-                        <td>Type 1</td>
-                        <td>
-                            <a href="formations.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cette formation ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <!-- Ajoutez d'autres lignes de formation ici -->
-                </tbody>
-            </table>
+ <!-- Formations Table Start -->
+<div class="bg-secondary rounded p-4 mb-4">
+    <h6 class="mb-4">Formations</h6>
+    <div class="d-flex mb-3">
+        <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une formation">
+        <button class="btn btn-success" onclick="searchFormation()">Rechercher</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <thead>
+                <tr class="text-white">
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Nom</th>
+                    <th>Local</th>
+                    <th>Durée</th>
+                    <th>Type</th>
+                    <th>Description</th> <!-- New Description Column -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="formationTable">
+                <!-- JavaScript will insert rows here -->
+                <tr>
+                    <td>1</td>
+                    <td>2024-11-01</td>
+                    <td>Formation A</td>
+                    <td>Local 1</td>
+                    <td>2h</td>
+                    <td>Type 1</td>
+                    <td>Description de la formation A ici.</td> <!-- Placeholder Description -->
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="modifierFormation(1)">Modifier</button>
+                        <button class="btn btn-danger btn-sm" onclick="supprimerFormation(1)">Supprimer</button>
+                    </td>
+                </tr>
+                <!-- Additional rows can be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+            <span id="paginationInfo"></span>
+            <nav>
+                <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
+                    <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
-<!-- Formations End -->
 
-<!-- Événements Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="bg-secondary text-center rounded p-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Événements</h6>
-            <div>
-                <a href="evenements.html?action=add#addForm" class="btn btn-success me-2">Ajouter</a>
-                <a href="evenements.html" class="btn btn-primary">Afficher tout</a>
+          <!-- Tableau des Événements Start -->
+          <div class="bg-secondary rounded p-4 mb-4">
+            <h6 class="mb-4">Événements</h6>
+            <div class="d-flex mb-3">
+                <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher un événement">
+                <button class="btn btn-success" onclick="searchEvent()">Rechercher</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-white">
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Nom</th>
+                            <th>Local</th>
+                            <th>Type</th>
+                            <th>Description</th> <!-- New Description Column -->
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventTable">
+                        <!-- JavaScript will insert rows here -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between mt-3">
+                    <span id="paginationInfo"></span>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                <thead>
-                    <tr class="text-white">
-                        <th scope="col">ID</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Local</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>10 Mar 2045</td>
-                        <td>Événement A</td>
-                        <td>Salle 201</td>
-                        <td>Conférence</td>
-                        <td>
-                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>12 Mar 2030</td>
-                        <td>Événement B</td>
-                        <td>Salle 202</td>
-                        <td>Conférence</td>
-                        <td>
-                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>5 Mar 2030</td>
-                        <td>Événement C</td>
-                        <td>Salle 132</td>
-                        <td>Conférence</td>
-                        <td>
-                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>10 Mar 2087</td>
-                        <td>Événement D</td>
-                        <td>Salle 140</td>
-                        <td>Conférence</td>
-                        <td>
-                            <a href="evenements.html?id=1&action=edit#editForm" class="btn btn-sm btn-primary">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="confirm('Voulez-vous vraiment supprimer cet événement ?')">Supprimer</button>
-                        </td>
-                    </tr>
-                    <!-- Ajoutez d'autres lignes d'événements ici -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<!-- Événements End -->
+        <!-- Tableau des Événements End -->
 
              
             
 
-<!-- Recent Sales Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="bg-secondary text-center rounded p-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Réclamations</h6>
-            <a href="">Tout Afficher</a>
-            <a href="">Ajouter</a>
-        </div>
-        <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                <thead>
-                    <tr class="text-white">
-                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                        <th scope="col">ID</th>
-                        <th scope="col">Étudiant</th>
-                        <th scope="col">Sujet</th>
-                        <th scope="col">Statut</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>1</td>
-                        <td>Jean Dupont</td>
-                        <td>Problème de cours</td>
-                        <td>En attente</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>2</td>
-                        <td>Marie Curie</td>
-                        <td>Retard dans les notes</td>
-                        <td>Résolu</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>3</td>
-                        <td>Paul Martin</td>
-                        <td>Problème d'inscription</td>
-                        <td>En attente</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>4</td>
-                        <td>Sophie Laurent</td>
-                        <td>Problème de logement</td>
-                        <td>Résolu</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>5</td>
-                        <td>Lucie Bernard</td>
-                        <td>Problème technique</td>
-                        <td>En attente</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-warning me-2" href="">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
+    <!-- Tableau des Réclamations Start -->
+<div class="bg-secondary rounded p-4 mb-4">
+<h6 class="mb-4">Réclamations</h6>
+<div class="d-flex mb-3">
+<input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une réclamation">
+<button class="btn btn-success" onclick="searchReclamation()">Rechercher</button>
 </div>
-<!-- Recent Sales End -->
+<div class="table-responsive">
+<table class="table text-start align-middle table-bordered table-hover mb-0">
+<thead>
+  <tr class="text-white">
+      <th>ID</th>
+      <th>Sujet</th>
+      <th>ID Étudiant</th>
+      <th>Statut</th>
+      <th>Fichier Joint</th>
+      <th>Description</th> <!-- New Description Column -->
+      <th>Action</th>
+  </tr>
+</thead>
+<tbody id="reclamationTable">
+  <!-- Les lignes seront insérées dynamiquement via JavaScript -->
+</tbody>
+</table>
+</div>
 
 
 
@@ -908,6 +769,244 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- script reclamations table -->
+
+    <script>
+        const reclamations = [
+            { id: 1, sujet: "Problème de cours", etudiant_id: 123, statut: "En attente", fichier: "", description: "Détails sur le problème de cours." },
+            { id: 2, sujet: "Retard dans les notes", etudiant_id: 456, statut: "Résolu", fichier: "", description: "Détails sur le retard des notes." },
+            // Ajoutez plus de réclamations si nécessaire
+        ];
+    
+        function displayReclamationTable() {
+            const tableBody = document.getElementById("reclamationTable");
+            tableBody.innerHTML = "";
+    
+            for (const reclamation of reclamations) {
+                const row = `
+                    <tr>
+                        <td>${reclamation.id}</td>
+                        <td>${reclamation.sujet}</td>
+                        <td>${reclamation.etudiant_id}</td>
+                        <td>${reclamation.statut}</td>
+                        <td>${reclamation.fichier ? "<a href='" + reclamation.fichier + "'>Voir</a>" : "Aucun fichier"}</td>
+                        <td>${reclamation.description}</td> <!-- Added Description Column -->
+                        <td>
+                            <button class="btn btn-sm btn-warning me-2" onclick="editReclamation(${reclamation.id})">Modifier</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteReclamation(${reclamation.id})">Supprimer</button>
+                        </td>
+                    </tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+    
+        function addReclamation(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            const sujet = document.getElementById("reclamationSujet").value;
+            const etudiant_id = document.getElementById("reclamationEtudiantId").value;
+            const statut = document.getElementById("reclamationStatut").value;
+            const fichier = document.getElementById("reclamationFichier").value; // Assuming handling the file upload is required
+            const description = document.getElementById("reclamationDescription").value;
+    
+            const newReclamation = {
+                id: reclamations.length + 1, // Increment ID for new reclamation
+                sujet,
+                etudiant_id,
+                statut,
+                fichier,
+                description
+            };
+    
+            reclamations.push(newReclamation);
+            displayReclamationTable();
+            document.getElementById("addReclamationForm").reset();
+        }
+    
+        function editReclamation(id) {
+            const reclamation = reclamations.find(r => r.id === id);
+            if (reclamation) {
+                document.getElementById("editReclamationId").value = reclamation.id;
+                document.getElementById("editReclamationSujet").value = reclamation.sujet;
+                document.getElementById("editReclamationEtudiantId").value = reclamation.etudiant_id;
+                document.getElementById("editReclamationStatut").value = reclamation.statut;
+                document.getElementById("editReclamationDescription").value = reclamation.description; // Set the description
+                document.getElementById("editReclamationForm").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    
+        function saveReclamationChanges() {
+            const id = parseInt(document.getElementById("editReclamationId").value);
+            const reclamation = reclamations.find(r => r.id === id);
+            if (reclamation) {
+                reclamation.sujet = document.getElementById("editReclamationSujet").value;
+                reclamation.etudiant_id = document.getElementById("editReclamationEtudiantId").value;
+                reclamation.statut = document.getElementById("editReclamationStatut").value;
+                reclamation.description = document.getElementById("editReclamationDescription").value; // Update the description
+                displayReclamationTable();
+            }
+        }
+    
+        function deleteReclamation(id) {
+            if (confirm("Voulez-vous vraiment supprimer cette réclamation ?")) {
+                const index = reclamations.findIndex(r => r.id === id);
+                if (index > -1) {
+                    reclamations.splice(index, 1);
+                    displayReclamationTable();
+                }
+            }
+        }
+    
+        function cancelAdd() {
+            document.getElementById("addReclamationForm").reset();
+        }
+    
+        function cancelReclamationEdit() {
+            document.getElementById("editReclamationForm").reset();
+        }
+    
+        // Initialize the reclamation table on page load
+        document.addEventListener("DOMContentLoaded", displayReclamationTable);
+    </script>
+
+    <!-- script evenements table -->
+    <script>
+        // Masquer le spinner lorsque le contenu est chargé
+        document.addEventListener("DOMContentLoaded", function() {
+            const spinner = document.getElementById("spinner");
+            if (spinner) {
+                spinner.classList.remove("show");
+            }
+        });
+    
+        // Code JavaScript pour gérer la pagination et les événements
+        const events = [
+            { id: 1, date: "2045-01-01", nom: "Événement A", local: "Salle 201", type: "Conférence", description: "Description de l'événement A." },
+            { id: 2, date: "2045-02-05", nom: "Événement B", local: "Salle 202", type: "Atelier", description: "Description de l'événement B." },
+            { id: 3, date: "2045-03-15", nom: "Événement C", local: "Salle 203", type: "Séminaire", description: "Description de l'événement C." },
+            { id: 4, date: "2045-04-20", nom: "Événement D", local: "Salle 204", type: "Conférence", description: "Description de l'événement D." },
+            { id: 5, date: "2045-05-12", nom: "Événement E", local: "Salle 205", type: "Atelier", description: "Description de l'événement E." },
+        ];
+    
+        let currentPage = 1;
+        const rowsPerPage = 5;
+    
+        function displayEventTable() {
+            const tableBody = document.getElementById("eventTable");
+            tableBody.innerHTML = "";
+    
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedEvents = events.slice(start, end);
+    
+            for (const event of paginatedEvents) {
+                const row = `<tr data-id="${event.id}">
+                    <td>${event.id}</td>
+                    <td>${event.date}</td>
+                    <td>${event.nom}</td>
+                    <td>${event.local}</td>
+                    <td>${event.type}</td>
+                    <td>${event.description}</td> <!-- Added Description Column -->
+                    <td>
+                        <button class="btn btn-sm btn-warning me-2" onclick="editEvent(${event.id})">Modifier</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteEvent(${event.id})">Supprimer</button>
+                    </td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            }
+    
+            document.getElementById("paginationInfo").textContent = `Page ${currentPage} / ${Math.ceil(events.length / rowsPerPage)}`;
+        }
+    
+        function addEvent(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+    
+            const id = document.getElementById("idEvenement").value;
+            const nom = document.getElementById("nomEvenement").value;
+            const date = document.getElementById("dateEvenement").value;
+            const local = document.getElementById("localEvenement").value;
+            const type = document.getElementById("typeEvenement").value;
+            const description = document.getElementById("descriptionEvenement").value; // Get the description
+    
+            // Create a new event object
+            const newEvent = {
+                id: parseInt(id),
+                date,
+                nom,
+                local,
+                type,
+                description
+            };
+    
+            // Add the new event to the events array
+            events.push(newEvent);
+            displayEventTable();
+            cancelAdd();
+        }
+    
+        function editEvent(id) {
+            const event = events.find(e => e.id === id);
+            if (event) {
+                document.getElementById("editEventId").value = event.id;
+                document.getElementById("editEventNom").value = event.nom;
+                document.getElementById("editEventDate").value = event.date;
+                document.getElementById("editEventLocal").value = event.local;
+                document.getElementById("editEventType").value = event.type;
+                document.getElementById("editEventDescription").value = event.description; // Set the description
+                document.getElementById("editEventForm").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    
+        function saveEventChanges() {
+            const id = parseInt(document.getElementById("editEventId").value);
+            const event = events.find(e => e.id === id);
+            if (event) {
+                event.nom = document.getElementById("editEventNom").value;
+                event.date = document.getElementById("editEventDate").value;
+                event.local = document.getElementById("editEventLocal").value;
+                event.type = document.getElementById("editEventType").value;
+                event.description = document.getElementById("editEventDescription").value; // Update the description
+                displayEventTable();
+            }
+        }
+    
+        function deleteEvent(id) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer cet événement ?")) {
+                const index = events.findIndex(e => e.id === id);
+                if (index > -1) {
+                    events.splice(index, 1);
+                    displayEventTable();
+                }
+            }
+        }
+    
+        function cancelAdd() {
+            document.getElementById("addEventForm").reset();
+        }
+    
+        function cancelEventEdit() {
+            document.getElementById("editEventForm").reset();
+        }
+    
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayEventTable();
+            }
+        }
+    
+        function nextPage() {
+            if (currentPage < Math.ceil(events.length / rowsPerPage)) {
+                currentPage++;
+                displayEventTable();
+            }
+        }
+    
+        displayEventTable();
+    </script>
+
+
     <script>
 
         const users = [
@@ -987,6 +1086,150 @@ document.addEventListener("DOMContentLoaded", displayUserTable);
         // Call the function on page load
         document.addEventListener("DOMContentLoaded", displayFormsBasedOnAction);
     </script>
+
+
+
+    <!-- script formations table -->
+
+<script>
+    const formations = [
+        { id: 1, date: "2045-01-01", nom: "Formation A", local: "Salle 101", duree: "3 heures", type: "Type 1", description: "Description de la formation A." },
+        { id: 2, date: "2045-02-05", nom: "Formation B", local: "Salle 102", duree: "2 heures", type: "Type 2", description: "Description de la formation B." },
+        { id: 3, date: "2045-03-15", nom: "Formation C", local: "Salle 103", duree: "4 heures", type: "Type 1", description: "Description de la formation C." },
+        { id: 4, date: "2045-04-20", nom: "Formation D", local: "Salle 104", duree: "1 heure", type: "Type 3", description: "Description de la formation D." },
+        { id: 5, date: "2045-05-12", nom: "Formation E", local: "Salle 105", duree: "2 heures", type: "Type 2", description: "Description de la formation E." },
+    ];
+
+    let currentPage = 1;
+    const rowsPerPage = 5;
+
+    function displayTable() {
+        const tableBody = document.getElementById("formationTable");
+        tableBody.innerHTML = "";
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const paginatedFormations = formations.slice(start, end);
+
+        for (const formation of paginatedFormations) {
+            const row = `<tr data-id="${formation.id}">
+                <td>${formation.id}</td>
+                <td>${formation.date}</td>
+                <td>${formation.nom}</td>
+                <td>${formation.local}</td>
+                <td>${formation.duree}</td>
+                <td>${formation.type}</td>
+                <td>${formation.description}</td> <!-- Added Description Column -->
+                <td>
+                    <button class="btn btn-sm btn-warning me-2" onclick="editFormation(${formation.id})">Modifier</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteFormation(${formation.id})">Supprimer</button>
+                </td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        }
+
+        document.getElementById("paginationInfo").textContent = `Page ${currentPage} / ${Math.ceil(formations.length / rowsPerPage)}`;
+    }
+
+    function editFormation(id) {
+        const formation = formations.find(f => f.id === id);
+        if (formation) {
+            document.getElementById("editId").value = formation.id;
+            document.getElementById("editNom").value = formation.nom;
+            document.getElementById("editDate").value = formation.date;
+            document.getElementById("editLocal").value = formation.local;
+            document.getElementById("editDuree").value = formation.duree;
+            document.getElementById("editType").value = formation.type;
+            document.getElementById("editDescription").value = formation.description; // Set the description
+            document.getElementById("editForm").scrollIntoView();
+        }
+    }
+
+    function saveChanges() {
+        const id = document.getElementById("editId").value;
+        const nom = document.getElementById("editNom").value;
+        const date = document.getElementById("editDate").value;
+        const local = document.getElementById("editLocal").value;
+        const duree = document.getElementById("editDuree").value;
+        const type = document.getElementById("editType").value;
+        const description = document.getElementById("editDescription").value; // Get the description
+
+        const formation = formations.find(f => f.id == id);
+        if (formation) {
+            formation.nom = nom;
+            formation.date = date;
+            formation.local = local;
+            formation.duree = duree;
+            formation.type = type;
+            formation.description = description; // Update the description
+            displayTable();
+            cancelEdit();
+        }
+    }
+
+    function cancelEdit() {
+        document.getElementById("editForm").reset();
+        document.getElementById("editId").value = "";
+    }
+
+    function cancelAdd() {
+        document.getElementById("addFormationForm").reset();
+    }
+
+    function deleteFormation(id) {
+        if (confirm("Voulez-vous vraiment supprimer cette formation ?")) {
+            const index = formations.findIndex(f => f.id === id);
+            if (index > -1) {
+                formations.splice(index, 1);
+                displayTable();
+            }
+        }
+    }
+
+    function addFormation(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        const id = document.getElementById("idFormation").value;
+        const nom = document.getElementById("nom").value;
+        const date = document.getElementById("date").value;
+        const local = document.getElementById("local").value;
+        const duree = document.getElementById("duree").value;
+        const type = document.getElementById("type").value;
+        const description = document.getElementById("description").value; // Get the description
+
+        // Create a new formation object
+        const newFormation = {
+            id: parseInt(id),
+            date,
+            nom,
+            local,
+            duree,
+            type,
+            description
+        };
+
+        // Add the new formation to the formations array
+        formations.push(newFormation);
+        displayTable();
+        cancelAdd();
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayTable();
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < Math.ceil(formations.length / rowsPerPage)) {
+            currentPage++;
+            displayTable();
+        }
+    }
+
+    displayTable();
+</script>
     
 </body>
 
