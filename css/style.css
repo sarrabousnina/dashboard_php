@@ -1,12 +1,12 @@
 /********** Updated Template CSS with Navy Theme and Rounded Elements **********/
 :root {
     --primary: #4A90E2; /* Light blue for primary accents */
-    --secondary:#FFFFFF /* Navy blue for the main background */
+    --secondary: #002261; /* Navy blue for the main background */
     --card-background: #e2e6ece1; /* Light gray-blue for card backgrounds */
     --light: #8A9BAB; /* Medium gray-blue for secondary text */
     --dark: #1A1A2E; /* Dark gray for accents and borders */
     --highlight-red: #FF6B6B; /* Soft red for notifications and highlights */
-    --text-primary:#002261;; /* White for primary text */
+    --text-primary: #FFFFFF; /* White for primary text */
     --text-secondary: #C0C0C0; /* Light gray for secondary text */
     --border-radius: 16px; /* Standard border radius for a rounded theme */
 }
@@ -19,7 +19,7 @@
     bottom: 45px;
     z-index: 99;
     background: var(--primary);
-    color:#002261;;
+    color: #FFFFFF;
     border-radius: 50%;
     width: 38px;
     height: 38px;
@@ -49,7 +49,7 @@
 /*** Button ***/
 .btn {
     transition: .5s;
-    color:#002261;;
+    color: #FFFFFF;
     background: var(--primary);
     border-radius: var(--border-radius); /* Rounded buttons */
     padding: 8px 16px;
@@ -249,7 +249,7 @@ p, span, a {
 .bootstrap-datetimepicker-widget table td.active,
 .bootstrap-datetimepicker-widget table td.active:hover {
     background: var(--primary);
-    color:#002261;;
+    color: #FFFFFF;
 }
 
 .bootstrap-datetimepicker-widget table td.today::before {
