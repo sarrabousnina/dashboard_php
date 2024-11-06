@@ -66,6 +66,7 @@
             <a href="club.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Clubs</a>
             <a href="users.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Utilisateurs</a>
             <a href="reclamations.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Réclamations</a>
+            
         </div>
     </nav>
 </div>
@@ -244,36 +245,34 @@
             <!-- Sales Chart End -->
 
 
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Users</h6>
-                        <div>
-                            <!-- Add User and Show All Buttons, aligned to the right -->
-                            <a href="users.html?action=add" class="btn btn-success me-2">Ajouter</a>
-                            <a href="users.html" class="btn btn-danger">Tout Afficher</a>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th>ID</th>
-                                    <th>Nom</th>
-                                    <th>Prénom</th>
-                                    <th>Date de Naissance</th>
-                                    <th>Niveau Académique</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="userTable">
-                                <!-- Rows will be dynamically inserted by JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
+            <!-- User Start -->
+            <div class="bg-secondary text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Utilisateurs</h6>
+                
+                </div>
+                <div class="d-flex mb-3">
+                    <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher un utilisateur">
+                    <button class="btn btn-success" onclick="searchUser()">Rechercher</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <thead>
+                            <tr class="text-white">
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Date de Naissance</th>
+                                <th>Niveau Académique</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTable">
+                            <!-- JavaScript will insert rows here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            
 
 
 
@@ -909,48 +908,86 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
     <script>
+
         const users = [
             { id: 1, nom: "Dupont", prenom: "Marie", date_naissance: "1995-01-15", niv_academique: "Master" },
             { id: 2, nom: "Martin", prenom: "Paul", date_naissance: "1992-05-10", niv_academique: "Bachelor" },
-            // Additional users as needed
-        ];
-    
+            { id: 3, nom: "Ali", prenom: "Ahmed", date_naissance: "1995-08-17", niv_academique: "Bachelor" },
+            // Add more users as needed
+         ];
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                action: params.get("action"),
+                id: parseInt(params.get("id")),
+            };
+        }
+
+        function displayFormsBasedOnAction() {
+            const params = getUrlParams();
+            if (params.action === "add") {
+                document.getElementById("addUserForm").scrollIntoView({ behavior: 'smooth' });
+            } else if (params.action === "edit" && params.id) {
+                document.getElementById("editUserForm").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         function displayUserTable() {
-            const tableBody = document.getElementById("userTable");
-            tableBody.innerHTML = "";
-    
-            for (const user of users) {
-                const row = `
-                    <tr>
-                        <td>${user.id}</td>
-                        <td>${user.nom}</td>
-                        <td>${user.prenom}</td>
-                        <td>${user.date_naissance}</td>
-                        <td>${user.niv_academique}</td>
-                        <td>
-                            <a href="users.html?id=${user.id}&action=edit" class="btn btn-sm btn-warning me-2">Modifier</a>
-                            <button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">Supprimer</button>
-                        </td>
-                    </tr>`;
-                tableBody.innerHTML += row;
-            }
-        }
-    
-        function deleteUser(id) {
-            if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-                const index = users.findIndex(u => u.id === id);
-                if (index > -1) {
-                    users.splice(index, 1);
-                    displayUserTable();
-                }
-            }
-        }
-    
-        // Initialize the user table on page load
-        document.addEventListener("DOMContentLoaded", displayUserTable);
+const tableBody = document.getElementById("userTable");
+tableBody.innerHTML = "";
+
+for (const user of users) {
+    const row = `
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.nom}</td>
+            <td>${user.prenom}</td>
+            <td>${user.date_naissance}</td>
+            <td>${user.niv_academique}</td>
+            <td>
+                <button class="btn btn-sm btn-warning me-2" onclick="editUser(${user.id})">Modifier</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">Supprimer</button>
+            </td>
+        </tr>`;
+    tableBody.innerHTML += row;
+}
+}
+
+function scrollToAddForm() {
+document.getElementById("addUserForm").scrollIntoView({ behavior: 'smooth' });
+}
+
+function editUser(id) {
+const user = users.find(u => u.id === id);
+if (user) {
+    document.getElementById("editUserId").value = user.id;
+    document.getElementById("editUserNom").value = user.nom;
+    document.getElementById("editUserPrenom").value = user.prenom;
+    document.getElementById("editUserDateNaissance").value = user.date_naissance;
+    document.getElementById("editUserPassword").value = ""; // Clear the password field for security
+    document.getElementById("editUserNivAcademique").value = user.niv_academique;
+
+    // Scroll smoothly to the edit form
+    document.getElementById("editUserForm").scrollIntoView({ behavior: 'smooth' });
+}
+}
+
+function deleteUser(id) {
+if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
+    const index = users.findIndex(u => u.id === id);
+    if (index > -1) {
+        users.splice(index, 1);
+        displayUserTable();
+    }
+}
+}
+
+// Initialize the user table on page load
+document.addEventListener("DOMContentLoaded", displayUserTable);
+        // Call the function on page load
+        document.addEventListener("DOMContentLoaded", displayFormsBasedOnAction);
     </script>
+    
 </body>
 
 </html>
