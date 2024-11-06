@@ -172,146 +172,206 @@
                         <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une réclamation">
                         <button class="btn btn-success" onclick="searchReclamation()">Rechercher</button>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th>ID</th>
-                                    <th>Sujet</th>
-                                    <th>ID Étudiant</th>
-                                    <th>Statut</th>
-                                    <th>Fichier Joint</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="reclamationTable">
-                                <!-- Les lignes seront insérées dynamiquement via JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                  <!-- Tableau des Réclamations Start -->
+<div class="bg-secondary rounded p-4 mb-4">
+    <h6 class="mb-4">Réclamations</h6>
+    <div class="d-flex mb-3">
+        <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une réclamation">
+        <button class="btn btn-success" onclick="searchReclamation()">Rechercher</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <thead>
+                <tr class="text-white">
+                    <th>ID</th>
+                    <th>Sujet</th>
+                    <th>ID Étudiant</th>
+                    <th>Statut</th>
+                    <th>Fichier Joint</th>
+                    <th>Description</th> <!-- New Description Column -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="reclamationTable">
+                <!-- Les lignes seront insérées dynamiquement via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Tableau des Réclamations End -->
+
+<!-- Formulaire pour Ajouter une Réclamation Start -->
+<div class="container-fluid pt-4 px-4" id="addReclamationForm">
+    <div class="bg-secondary rounded p-4">
+        <h6 class="mb-4">Ajouter une Réclamation</h6>
+        <form id="addReclamationForm" onsubmit="addReclamation(event)">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control bg-dark text-light" id="reclamationSujet" placeholder="Sujet" required>
+                <label for="reclamationSujet" class="text-light">Sujet</label>
             </div>
-            
-            <!-- Formulaire pour Ajouter une Réclamation -->
-            <div class="container-fluid pt-4 px-4" id="addReclamationForm">
-                <div class="bg-secondary rounded p-4">
-                    <h6 class="mb-4">Ajouter une Réclamation</h6>
-                    <form enctype="multipart/form-data">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control bg-dark text-light" id="reclamationSujet" placeholder="Sujet">
-                            <label for="reclamationSujet" class="text-light">Sujet</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control bg-dark text-light" id="reclamationEtudiantId" placeholder="ID Étudiant">
-                            <label for="reclamationEtudiantId" class="text-light">ID Étudiant</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <select class="form-select bg-dark text-light" id="reclamationStatut">
-                                <option selected>En attente</option>
-                                <option value="Résolu">Résolu</option>
-                            </select>
-                            <label for="reclamationStatut" class="text-light">Statut</label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="reclamationFichier" class="text-light">Fichier Joint</label>
-                            <input type="file" class="form-control bg-dark text-light" id="reclamationFichier" placeholder="Joindre un fichier">
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success me-2">Enregistrer</button>
-                            <button type="button" class="btn btn-danger ms-2">Annuler</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control bg-dark text-light" id="reclamationEtudiantId" placeholder="ID Étudiant" required>
+                <label for="reclamationEtudiantId" class="text-light">ID Étudiant</label>
             </div>
-            
-            <!-- Formulaire pour Modifier une Réclamation -->
-            <div class="container-fluid pt-4 px-4" id="editReclamationForm">
-                <div class="bg-secondary rounded p-4">
-                    <h6 class="mb-4">Modifier une Réclamation</h6>
-                    <form enctype="multipart/form-data">
-                        <!-- Champ ID caché pour l'identifiant de la réclamation -->
-                        <input type="hidden" id="editReclamationId">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control bg-dark text-light" id="editReclamationSujet" placeholder="Sujet">
-                            <label for="editReclamationSujet" class="text-light">Sujet</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control bg-dark text-light" id="editReclamationEtudiantId" placeholder="ID Étudiant">
-                            <label for="editReclamationEtudiantId" class="text-light">ID Étudiant</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <select class="form-select bg-dark text-light" id="editReclamationStatut">
-                                <option value="En attente">En attente</option>
-                                <option value="Résolu">Résolu</option>
-                            </select>
-                            <label for="editReclamationStatut" class="text-light">Statut</label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editReclamationFichier" class="text-light">Fichier Joint</label>
-                            <input type="file" class="form-control bg-dark text-light" id="editReclamationFichier" placeholder="Joindre un fichier">
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success me-2">Enregistrer les modifications</button>
-                            <button type="button" class="btn btn-danger ms-2" onclick="cancelReclamationEdit()">Annuler</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="form-floating mb-3">
+                <select class="form-select bg-dark text-light" id="reclamationStatut">
+                    <option selected>En attente</option>
+                    <option value="Résolu">Résolu</option>
+                </select>
+                <label for="reclamationStatut" class="text-light">Statut</label>
             </div>
-            
-            <script>
-                const reclamations = [
-                    { id: 1, sujet: "Problème de cours", etudiant_id: 123, statut: "En attente", fichier: "" },
-                    { id: 2, sujet: "Retard dans les notes", etudiant_id: 456, statut: "Résolu", fichier: "" },
-                    // Ajoutez plus de réclamations si nécessaire
-                ];
-            
-                function displayReclamationTable() {
-                    const tableBody = document.getElementById("reclamationTable");
-                    tableBody.innerHTML = "";
-            
-                    for (const reclamation of reclamations) {
-                        const row = `
-                            <tr>
-                                <td>${reclamation.id}</td>
-                                <td>${reclamation.sujet}</td>
-                                <td>${reclamation.etudiant_id}</td>
-                                <td>${reclamation.statut}</td>
-                                <td>${reclamation.fichier ? "<a href='" + reclamation.fichier + "'>Voir</a>" : "Aucun fichier"}</td>
-                                <td>
-                                    <button class="btn btn-sm btn-warning me-2" onclick="editReclamation(${reclamation.id})">Modifier</button>
-                                    <button class="btn btn-sm btn-danger" onclick="deleteReclamation(${reclamation.id})">Supprimer</button>
-                                </td>
-                            </tr>`;
-                        tableBody.innerHTML += row;
-                    }
-                }
-            
-                function editReclamation(id) {
-                    const reclamation = reclamations.find(r => r.id === id);
-                    if (reclamation) {
-                        document.getElementById("editReclamationId").value = reclamation.id;
-                        document.getElementById("editReclamationSujet").value = reclamation.sujet;
-                        document.getElementById("editReclamationEtudiantId").value = reclamation.etudiant_id;
-                        document.getElementById("editReclamationStatut").value = reclamation.statut;
-            
-                        // Scroll smoothly to the edit form
-                        document.getElementById("editReclamationForm").scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            
-                function deleteReclamation(id) {
-                    if (confirm("Voulez-vous vraiment supprimer cette réclamation ?")) {
-                        const index = reclamations.findIndex(r => r.id === id);
-                        if (index > -1) {
-                            reclamations.splice(index, 1);
-                            displayReclamationTable();
-                        }
-                    }
-                }
-            
-                // Initialize the reclamation table on page load
-                document.addEventListener("DOMContentLoaded", displayReclamationTable);
-            </script>
-            
+            <div class="mb-3">
+                <label for="reclamationFichier" class="text-light">Fichier Joint</label>
+                <input type="file" class="form-control bg-dark text-light" id="reclamationFichier" placeholder="Joindre un fichier">
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control bg-dark text-light" id="reclamationDescription" placeholder="Description" rows="3" required></textarea>
+                <label for="reclamationDescription" class="text-light">Description</label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success me-2">Enregistrer</button>
+                <button type="button" class="btn btn-danger ms-2" onclick="cancelAdd()">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Formulaire pour Ajouter une Réclamation End -->
+
+<!-- Formulaire pour Modifier une Réclamation Start -->
+<div class="container-fluid pt-4 px-4" id="editReclamationForm">
+    <div class="bg-secondary rounded p-4">
+        <h6 class="mb-4">Modifier une Réclamation</h6>
+        <form id="editReclamationForm" enctype="multipart/form-data">
+            <input type="hidden" id="editReclamationId">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control bg-dark text-light" id="editReclamationSujet" placeholder="Sujet" required>
+                <label for="editReclamationSujet" class="text-light">Sujet</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control bg-dark text-light" id="editReclamationEtudiantId" placeholder="ID Étudiant" required>
+                <label for="editReclamationEtudiantId" class="text-light">ID Étudiant</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select bg-dark text-light" id="editReclamationStatut">
+                    <option value="En attente">En attente</option>
+                    <option value="Résolu">Résolu</option>
+                </select>
+                <label for="editReclamationStatut" class="text-light">Statut</label>
+            </div>
+            <div class="mb-3">
+                <label for="editReclamationFichier" class="text-light">Fichier Joint</label>
+                <input type="file" class="form-control bg-dark text-light" id="editReclamationFichier" placeholder="Joindre un fichier">
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control bg-dark text-light" id="editReclamationDescription" placeholder="Description" rows="3" required></textarea>
+                <label for="editReclamationDescription" class="text-light">Description</label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-success mx-2" onclick="saveReclamationChanges()">Enregistrer les modifications</button>
+                <button type="button" class="btn btn-danger mx-2" onclick="cancelReclamationEdit()">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Formulaire pour Modifier une Réclamation End -->
+
+<script>
+    const reclamations = [
+        { id: 1, sujet: "Problème de cours", etudiant_id: 123, statut: "En attente", fichier: "", description: "Détails sur le problème de cours." },
+        { id: 2, sujet: "Retard dans les notes", etudiant_id: 456, statut: "Résolu", fichier: "", description: "Détails sur le retard des notes." },
+        // Ajoutez plus de réclamations si nécessaire
+    ];
+
+    function displayReclamationTable() {
+        const tableBody = document.getElementById("reclamationTable");
+        tableBody.innerHTML = "";
+
+        for (const reclamation of reclamations) {
+            const row = `
+                <tr>
+                    <td>${reclamation.id}</td>
+                    <td>${reclamation.sujet}</td>
+                    <td>${reclamation.etudiant_id}</td>
+                    <td>${reclamation.statut}</td>
+                    <td>${reclamation.fichier ? "<a href='" + reclamation.fichier + "'>Voir</a>" : "Aucun fichier"}</td>
+                    <td>${reclamation.description}</td> <!-- Added Description Column -->
+                    <td>
+                        <button class="btn btn-sm btn-warning me-2" onclick="editReclamation(${reclamation.id})">Modifier</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteReclamation(${reclamation.id})">Supprimer</button>
+                    </td>
+                </tr>`;
+            tableBody.innerHTML += row;
+        }
+    }
+
+    function addReclamation(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        const sujet = document.getElementById("reclamationSujet").value;
+        const etudiant_id = document.getElementById("reclamationEtudiantId").value;
+        const statut = document.getElementById("reclamationStatut").value;
+        const fichier = document.getElementById("reclamationFichier").value; // Assuming handling the file upload is required
+        const description = document.getElementById("reclamationDescription").value;
+
+        const newReclamation = {
+            id: reclamations.length + 1, // Increment ID for new reclamation
+            sujet,
+            etudiant_id,
+            statut,
+            fichier,
+            description
+        };
+
+        reclamations.push(newReclamation);
+        displayReclamationTable();
+        document.getElementById("addReclamationForm").reset();
+    }
+
+    function editReclamation(id) {
+        const reclamation = reclamations.find(r => r.id === id);
+        if (reclamation) {
+            document.getElementById("editReclamationId").value = reclamation.id;
+            document.getElementById("editReclamationSujet").value = reclamation.sujet;
+            document.getElementById("editReclamationEtudiantId").value = reclamation.etudiant_id;
+            document.getElementById("editReclamationStatut").value = reclamation.statut;
+            document.getElementById("editReclamationDescription").value = reclamation.description; // Set the description
+            document.getElementById("editReclamationForm").scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function saveReclamationChanges() {
+        const id = parseInt(document.getElementById("editReclamationId").value);
+        const reclamation = reclamations.find(r => r.id === id);
+        if (reclamation) {
+            reclamation.sujet = document.getElementById("editReclamationSujet").value;
+            reclamation.etudiant_id = document.getElementById("editReclamationEtudiantId").value;
+            reclamation.statut = document.getElementById("editReclamationStatut").value;
+            reclamation.description = document.getElementById("editReclamationDescription").value; // Update the description
+            displayReclamationTable();
+        }
+    }
+
+    function deleteReclamation(id) {
+        if (confirm("Voulez-vous vraiment supprimer cette réclamation ?")) {
+            const index = reclamations.findIndex(r => r.id === id);
+            if (index > -1) {
+                reclamations.splice(index, 1);
+                displayReclamationTable();
+            }
+        }
+    }
+
+    function cancelAdd() {
+        document.getElementById("addReclamationForm").reset();
+    }
+
+    function cancelReclamationEdit() {
+        document.getElementById("editReclamationForm").reset();
+    }
+
+    // Initialize the reclamation table on page load
+    document.addEventListener("DOMContentLoaded", displayReclamationTable);
+</script>
+
             </body>
             </html>

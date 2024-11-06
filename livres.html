@@ -237,91 +237,12 @@
                         <th scope="col">Catégorie</th>
                         <th scope="col">Date de Publication</th>
                         <th scope="col">Disponibilité</th>
-                        <th scope="col">Description</th> <!-- New Description column header -->
+                        <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>1</td>
-                        <td>Le Petit Prince</td>
-                        <td>Antoine de Saint-Exupéry</td>
-                        <td>Littérature</td>
-                        <td>1943-04-06</td>
-                        <td>Disponible</td>
-                        <td>Un conte philosophique et poétique.</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(1, 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Littérature', '1943-04-06', 'available', 'Un conte philosophique et poétique.')">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>2</td>
-                        <td>1984</td>
-                        <td>George Orwell</td>
-                        <td>Science Fiction</td>
-                        <td>1949-06-08</td>
-                        <td>Indisponible</td>
-                        <td>Un roman dystopique sur une société totalitaire.</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(2, '1984', 'George Orwell', 'Science Fiction', '1949-06-08', 'unavailable', 'Un roman dystopique sur une société totalitaire.')">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>3</td>
-                        <td>Les Misérables</td>
-                        <td>Victor Hugo</td>
-                        <td>Classique</td>
-                        <td>1862-04-03</td>
-                        <td>Disponible</td>
-                        <td>Une histoire sur la justice et la rédemption.</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(3, 'Les Misérables', 'Victor Hugo', 'Classique', '1862-04-03', 'available', 'Une histoire sur la justice et la rédemption.')">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>4</td>
-                        <td>La Peste</td>
-                        <td>Albert Camus</td>
-                        <td>Philosophie</td>
-                        <td>1947-09-01</td>
-                        <td>Indisponible</td>
-                        <td>Une métaphore de la lutte contre le mal.</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(4, 'La Peste', 'Albert Camus', 'Philosophie', '1947-09-01', 'unavailable', 'Une métaphore de la lutte contre le mal.')">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>5</td>
-                        <td>Harry Potter à l'école des sorciers</td>
-                        <td>J.K. Rowling</td>
-                        <td>Fantaisie</td>
-                        <td>1997-06-26</td>
-                        <td>Disponible</td>
-                        <td>Le début des aventures du jeune sorcier Harry Potter.</td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(5, 'Harry Potter à l\'école des sorciers', 'J.K. Rowling', 'Fantaisie', '1997-06-26', 'available', 'Le début des aventures du jeune sorcier Harry Potter.')">Modifier</a>
-                                <a class="btn btn-sm btn-danger" href="">Supprimer</a>
-                            </div>
-                        </td>
-                    </tr>
+                <tbody id="bookTable">
+                    <!-- Rows will be inserted dynamically via JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -422,7 +343,7 @@
         <div class="col-sm-12">
             <div class="bg-secondary rounded p-4 border border-light">
                 <h6 class="mb-4">Modifier un Livre</h6>
-                <form id="editBookForm">
+                <form id="editBookForm" onsubmit="editBook(event)">
                     <!-- ID -->
                     <div class="row mb-3">
                         <label for="inputEditBookId" class="col-sm-2 col-form-label">ID</label>
@@ -430,28 +351,28 @@
                             <input type="text" class="form-control" id="inputEditBookId" placeholder="Entrer l'ID du livre" required readonly>
                         </div>
                     </div>
-
+        
                     <!-- Title -->
                     <div class="row mb-3">
                         <label for="inputEditTitle" class="col-sm-2 col-form-label">Titre</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEditTitle" placeholder="Modifier le titre du livre">
+                            <input type="text" class="form-control" id="inputEditTitle" placeholder="Modifier le titre du livre" required>
                         </div>
                     </div>
-
+        
                     <!-- Author -->
                     <div class="row mb-3">
                         <label for="inputEditAuthor" class="col-sm-2 col-form-label">Auteur</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEditAuthor" placeholder="Modifier le nom de l'auteur">
+                            <input type="text" class="form-control" id="inputEditAuthor" placeholder="Modifier le nom de l'auteur" required>
                         </div>
                     </div>
-
+        
                     <!-- Category -->
                     <div class="row mb-3">
                         <label for="inputEditCategory" class="col-sm-2 col-form-label">Catégorie</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="inputEditCategory">
+                            <select class="form-control" id="inputEditCategory" required>
                                 <option value="">Sélectionner une catégorie</option>
                                 <option value="Literature">Littérature</option>
                                 <option value="Science Fiction">Science-Fiction</option>
@@ -461,24 +382,23 @@
                             </select>
                         </div>
                     </div>
-
-
+        
                     <!-- Published Date -->
                     <div class="row mb-3">
                         <label for="inputEditDate" class="col-sm-2 col-form-label">Date de Publication</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="inputEditDate">
+                            <input type="date" class="form-control" id="inputEditDate" required>
                         </div>
                     </div>
-                        <!-- Description -->
-                        <div class="row mb-3">
-                            <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" id="inputEditDescription" placeholder="Modifier la description du livre"></textarea>
-                            </div>
+        
+                    <!-- Description -->
+                    <div class="row mb-3">
+                        <label for="inputEditDescription" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="inputEditDescription" placeholder="Modifier la description du livre" rows="3" required></textarea>
                         </div>
-
-
+                    </div>
+        
                     <!-- Availability (Radios) -->
                     <fieldset class="row mb-3">
                         <legend class="col-form-label col-sm-2 pt-0">Disponibilité</legend>
@@ -493,9 +413,10 @@
                             </div>
                         </div>
                     </fieldset>
-
+        
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Modifier le Livre</button>
+                    <button type="button" class="btn btn-danger" onclick="hideEditBookForm()">Annuler</button>
                 </form>
             </div>
         </div>
@@ -504,23 +425,124 @@
 <!-- Widgets End -->
 
 <script>
-    function populateBookForm(id, title, author, category, pubDate, availability, description) {
-        // Populate the form fields with the selected book's information
-        document.getElementById('inputEditBookId').value = id; // Set the ID
-        document.getElementById('inputEditTitle').value = title; // Set the title
-        document.getElementById('inputEditAuthor').value = author; // Set the author
-        document.getElementById('inputEditCategory').value = category; // Set the category
-        document.getElementById('inputEditDate').value = pubDate; // Set the publication date
-        document.getElementById('inputEditDescription').value = description; // Set the description
+    const books = [
+        { id: 1, title: "Le Petit Prince", author: "Antoine de Saint-Exupéry", category: "Littérature", pubDate: "1943-04-06", availability: "available", description: "Un conte philosophique et poétique." },
+        { id: 2, title: "1984", author: "George Orwell", category: "Science Fiction", pubDate: "1949-06-08", availability: "unavailable", description: "Un roman dystopique sur une société totalitaire." },
+        { id: 3, title: "Les Misérables", author: "Victor Hugo", category: "Classique", pubDate: "1862-04-03", availability: "available", description: "Une histoire sur la justice et la rédemption." },
+        { id: 4, title: "La Peste", author: "Albert Camus", category: "Philosophie", pubDate: "1947-09-01", availability: "unavailable", description: "Une métaphore de la lutte contre le mal." },
+        { id: 5, title: "Harry Potter à l'école des sorciers", author: "J.K. Rowling", category: "Fantaisie", pubDate: "1997-06-26", availability: "available", description: "Le début des aventures du jeune sorcier Harry Potter." },
+    ];
 
-        // Set the availability
+    function displayBookTable() {
+        const tableBody = document.getElementById("bookTable");
+        tableBody.innerHTML = "";
+
+        for (const book of books) {
+            const row = `
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>${book.id}</td>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.category}</td>
+                    <td>${book.pubDate}</td>
+                    <td>${book.availability === "available" ? "Disponible" : "Indisponible"}</td>
+                    <td>${book.description}</td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-sm btn-primary me-2" href="javascript:void(0);" onclick="populateBookForm(${book.id}, '${book.title}', '${book.author}', '${book.category}', '${book.pubDate}', '${book.availability}', '${book.description}')">Modifier</a>
+                            <a class="btn btn-sm btn-danger" href="javascript:void(0);" onclick="deleteBook(${book.id})">Supprimer</a>
+                        </div>
+                    </td>
+                </tr>`;
+            tableBody.innerHTML += row;
+        }
+    }
+
+    function addBook(event) {
+        event.preventDefault();
+
+        const title = document.getElementById("inputTitle").value;
+        const author = document.getElementById("inputAuthor").value;
+        const category = document.getElementById("inputCategory").value;
+        const pubDate = document.getElementById("inputDate").value;
+        const availability = document.querySelector('input[name="availabilityRadios"]:checked').value;
+        const description = document.getElementById("inputDescription").value;
+
+        const newBook = {
+            id: books.length + 1,
+            title,
+            author,
+            category,
+            pubDate,
+            availability,
+            description
+        };
+
+        books.push(newBook);
+        displayBookTable();
+        document.getElementById("bookForm").reset();
+        hideAddBookForm();
+    }
+
+    function populateBookForm(id, title, author, category, pubDate, availability, description) {
+        document.getElementById("inputEditBookId").value = id;
+        document.getElementById("inputEditTitle").value = title;
+        document.getElementById("inputEditAuthor").value = author;
+        document.getElementById("inputEditCategory").value = category;
+        document.getElementById("inputEditDate").value = pubDate;
+        document.getElementById("inputEditDescription").value = description;
+
         document.querySelector(`input[name="editAvailabilityRadios"][value="${availability}"]`).checked = true;
 
-        // Scroll to the "Modifier un Livre" form
-        document.getElementById('editBookForm').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById("editBookForm").style.display = "block";
+        document.getElementById("editBookForm").scrollIntoView({ behavior: 'smooth' });
     }
-</script>
 
+    function editBook(event) {
+        event.preventDefault();
+
+        const id = parseInt(document.getElementById("inputEditBookId").value);
+        const book = books.find(b => b.id === id);
+        if (book) {
+            book.title = document.getElementById("inputEditTitle").value;
+            book.author = document.getElementById("inputEditAuthor").value;
+            book.category = document.getElementById("inputEditCategory").value;
+            book.pubDate = document.getElementById("inputEditDate").value;
+            book.availability = document.querySelector('input[name="editAvailabilityRadios"]:checked').value;
+            book.description = document.getElementById("inputEditDescription").value;
+
+            displayBookTable();
+            hideEditBookForm();
+        }
+    }
+
+    function deleteBook(id) {
+        if (confirm("Voulez-vous vraiment supprimer ce livre ?")) {
+            const index = books.findIndex(b => b.id === id);
+            if (index > -1) {
+                books.splice(index, 1);
+                displayBookTable();
+            }
+        }
+    }
+
+    function showAddBookForm() {
+        document.getElementById("addBookForm").style.display = "block";
+        document.getElementById("editBookForm").style.display = "none";
+    }
+
+    function hideAddBookForm() {
+        document.getElementById("addBookForm").style.display = "none";
+    }
+
+    function hideEditBookForm() {
+        document.getElementById("editBookForm").style.display = "none";
+    }
+
+    // Initialize the book table on page load
+    document.addEventListener("DOMContentLoaded", displayBookTable);
+</script>
 
 
 

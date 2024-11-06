@@ -190,94 +190,118 @@
 <!-- Statistiques des Formations End -->
         
         
-           <!-- Formations Table Start -->
-    <div class="bg-secondary rounded p-4 mb-4">
-        <h6 class="mb-4">Formations</h6>
-        <div class="d-flex mb-3">
-            <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une formation">
-            <button class="btn btn-success" onclick="searchFormation()">Rechercher</button>
-        </div>
-        <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                <thead>
-                    <tr class="text-white">
-                        <th>ID</th>
-                        <th>Date</th>
-                        <th>Nom</th>
-                        <th>Local</th>
-                        <th>Durée</th>
-                        <th>Type</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="formationTable">
-                    <!-- JavaScript will insert rows here -->
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-between mt-3">
-                <span id="paginationInfo"></span>
-                <nav>
-                    <ul class="pagination pagination-sm mb-0">
-                        <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
-                        <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
-                    </ul>
-                </nav>
-            </div>
+<!-- Formations Table Start -->
+<div class="bg-secondary rounded p-4 mb-4">
+    <h6 class="mb-4">Formations</h6>
+    <div class="d-flex mb-3">
+        <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher une formation">
+        <button class="btn btn-success" onclick="searchFormation()">Rechercher</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <thead>
+                <tr class="text-white">
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Nom</th>
+                    <th>Local</th>
+                    <th>Durée</th>
+                    <th>Type</th>
+                    <th>Description</th> <!-- New Description Column -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="formationTable">
+                <!-- JavaScript will insert rows here -->
+                <tr>
+                    <td>1</td>
+                    <td>2024-11-01</td>
+                    <td>Formation A</td>
+                    <td>Local 1</td>
+                    <td>2h</td>
+                    <td>Type 1</td>
+                    <td>Description de la formation A ici.</td> <!-- Placeholder Description -->
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="modifierFormation(1)">Modifier</button>
+                        <button class="btn btn-danger btn-sm" onclick="supprimerFormation(1)">Supprimer</button>
+                    </td>
+                </tr>
+                <!-- Additional rows can be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+            <span id="paginationInfo"></span>
+            <nav>
+                <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
+                    <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
+</div>
+
 
 
      <!-- Form for Adding Formation Start -->
      <div id="addForm" class="bg-secondary rounded p-4">
         <h6 class="mb-4">Ajouter une Formation</h6>
-        <form>
+        <form id="addFormationForm" onsubmit="addFormation(event)">
             <!-- ID Formation -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control bg-dark text-light" id="idFormation" placeholder="ID Formation">
+                <input type="text" class="form-control bg-dark text-light" id="idFormation" placeholder="ID Formation" required>
                 <label for="idFormation" class="text-light">ID Formation</label>
             </div>
     
             <!-- Nom -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control bg-dark text-light" id="nom" placeholder="Nom">
+                <input type="text" class="form-control bg-dark text-light" id="nom" placeholder="Nom" required>
                 <label for="nom" class="text-light">Nom</label>
             </div>
     
             <!-- Date -->
             <div class="form-floating mb-3">
-                <input type="date" class="form-control bg-dark text-light" id="date" placeholder="Date">
+                <input type="date" class="form-control bg-dark text-light" id="date" placeholder="Date" required>
                 <label for="date" class="text-light">Date</label>
             </div>
     
             <!-- Local -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control bg-dark text-light" id="local" placeholder="Local">
+                <input type="text" class="form-control bg-dark text-light" id="local" placeholder="Local" required>
                 <label for="local" class="text-light">Local</label>
             </div>
     
             <!-- Durée -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control bg-dark text-light" id="duree" placeholder="Durée">
+                <input type="text" class="form-control bg-dark text-light" id="duree" placeholder="Durée" required>
                 <label for="duree" class="text-light">Durée</label>
             </div>
     
             <!-- Type (Liste déroulante) -->
             <div class="form-floating mb-3">
-                <select class="form-select bg-dark text-light" id="type" aria-label="Type de formation">
-                    <option selected>Sélectionner un type</option>
-                    <option value="1">Type 1</option>
-                    <option value="2">Type 2</option>
-                    <option value="3">Type 3</option>
+                <select class="form-select bg-dark text-light" id="type" aria-label="Type de formation" required>
+                    <option selected disabled>Sélectionner un type</option>
+                    <option value="Type 1">Type 1</option>
+                    <option value="Type 2">Type 2</option>
+                    <option value="Type 3">Type 3</option>
                 </select>
                 <label for="type" class="text-light">Type</label>
+            </div>
+    
+            <!-- Description -->
+            <div class="form-floating mb-3">
+                <textarea class="form-control bg-dark text-light" id="description" placeholder="Description" rows="3" required></textarea>
+                <label for="description" class="text-light">Description</label>
             </div>
     
             <!-- Boutons de soumission et d'annulation alignés et centrés -->
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-success me-2">Enregistrer</button>
-                <button type="button" class="btn btn-danger ms-2">Annuler</button>
+                <button type="button" class="btn btn-danger ms-2" onclick="cancelAdd()">Annuler</button>
             </div>
         </form>
+    </div>
+    
     <!-- Forms for Adding and Modifying Formations -->
     <div id="editForm" class="bg-secondary rounded p-4 mt-4">
         <h6 class="mb-4">Modifier une Formation</h6>
@@ -312,6 +336,11 @@
                 </select>
                 <label for="editType" class="text-light">Type</label>
             </div>
+            <!-- Description -->
+            <div class="form-floating mb-3">
+                <textarea class="form-control bg-dark text-light" id="editDescription" placeholder="Description" rows="3"></textarea>
+                <label for="editDescription" class="text-light">Description</label>
+            </div>
             <!-- Boutons Enregistrer et Annuler -->
             <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-success mx-2" onclick="saveChanges()">Enregistrer les modifications</button>
@@ -319,27 +348,27 @@
             </div>
         </form>
     </div>
-
+    
     <script>
         const formations = [
-            { id: 1, date: "2045-01-01", nom: "Formation A", local: "Salle 101", duree: "3 heures", type: "Type 1" },
-            { id: 2, date: "2045-02-05", nom: "Formation B", local: "Salle 102", duree: "2 heures", type: "Type 2" },
-            { id: 3, date: "2045-03-15", nom: "Formation C", local: "Salle 103", duree: "4 heures", type: "Type 1" },
-            { id: 4, date: "2045-04-20", nom: "Formation D", local: "Salle 104", duree: "1 heure", type: "Type 3" },
-            { id: 5, date: "2045-05-12", nom: "Formation E", local: "Salle 105", duree: "2 heures", type: "Type 2" },
+            { id: 1, date: "2045-01-01", nom: "Formation A", local: "Salle 101", duree: "3 heures", type: "Type 1", description: "Description de la formation A." },
+            { id: 2, date: "2045-02-05", nom: "Formation B", local: "Salle 102", duree: "2 heures", type: "Type 2", description: "Description de la formation B." },
+            { id: 3, date: "2045-03-15", nom: "Formation C", local: "Salle 103", duree: "4 heures", type: "Type 1", description: "Description de la formation C." },
+            { id: 4, date: "2045-04-20", nom: "Formation D", local: "Salle 104", duree: "1 heure", type: "Type 3", description: "Description de la formation D." },
+            { id: 5, date: "2045-05-12", nom: "Formation E", local: "Salle 105", duree: "2 heures", type: "Type 2", description: "Description de la formation E." },
         ];
-
+    
         let currentPage = 1;
         const rowsPerPage = 5;
-
+    
         function displayTable() {
             const tableBody = document.getElementById("formationTable");
             tableBody.innerHTML = "";
-
+    
             const start = (currentPage - 1) * rowsPerPage;
             const end = start + rowsPerPage;
             const paginatedFormations = formations.slice(start, end);
-
+    
             for (const formation of paginatedFormations) {
                 const row = `<tr data-id="${formation.id}">
                     <td>${formation.id}</td>
@@ -348,6 +377,7 @@
                     <td>${formation.local}</td>
                     <td>${formation.duree}</td>
                     <td>${formation.type}</td>
+                    <td>${formation.description}</td> <!-- Added Description Column -->
                     <td>
                         <button class="btn btn-sm btn-warning me-2" onclick="editFormation(${formation.id})">Modifier</button>
                         <button class="btn btn-sm btn-danger" onclick="deleteFormation(${formation.id})">Supprimer</button>
@@ -355,10 +385,10 @@
                 </tr>`;
                 tableBody.innerHTML += row;
             }
-
+    
             document.getElementById("paginationInfo").textContent = `Page ${currentPage} / ${Math.ceil(formations.length / rowsPerPage)}`;
         }
-
+    
         function editFormation(id) {
             const formation = formations.find(f => f.id === id);
             if (formation) {
@@ -368,10 +398,11 @@
                 document.getElementById("editLocal").value = formation.local;
                 document.getElementById("editDuree").value = formation.duree;
                 document.getElementById("editType").value = formation.type;
+                document.getElementById("editDescription").value = formation.description; // Set the description
                 document.getElementById("editForm").scrollIntoView();
             }
         }
-
+    
         function saveChanges() {
             const id = document.getElementById("editId").value;
             const nom = document.getElementById("editNom").value;
@@ -379,7 +410,8 @@
             const local = document.getElementById("editLocal").value;
             const duree = document.getElementById("editDuree").value;
             const type = document.getElementById("editType").value;
-
+            const description = document.getElementById("editDescription").value; // Get the description
+    
             const formation = formations.find(f => f.id == id);
             if (formation) {
                 formation.nom = nom;
@@ -387,16 +419,21 @@
                 formation.local = local;
                 formation.duree = duree;
                 formation.type = type;
+                formation.description = description; // Update the description
                 displayTable();
                 cancelEdit();
             }
         }
-
+    
         function cancelEdit() {
             document.getElementById("editForm").reset();
             document.getElementById("editId").value = "";
         }
-
+    
+        function cancelAdd() {
+            document.getElementById("addFormationForm").reset();
+        }
+    
         function deleteFormation(id) {
             if (confirm("Voulez-vous vraiment supprimer cette formation ?")) {
                 const index = formations.findIndex(f => f.id === id);
@@ -406,23 +443,51 @@
                 }
             }
         }
-
+    
+        function addFormation(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+    
+            const id = document.getElementById("idFormation").value;
+            const nom = document.getElementById("nom").value;
+            const date = document.getElementById("date").value;
+            const local = document.getElementById("local").value;
+            const duree = document.getElementById("duree").value;
+            const type = document.getElementById("type").value;
+            const description = document.getElementById("description").value; // Get the description
+    
+            // Create a new formation object
+            const newFormation = {
+                id: parseInt(id),
+                date,
+                nom,
+                local,
+                duree,
+                type,
+                description
+            };
+    
+            // Add the new formation to the formations array
+            formations.push(newFormation);
+            displayTable();
+            cancelAdd();
+        }
+    
         function prevPage() {
             if (currentPage > 1) {
                 currentPage--;
                 displayTable();
             }
         }
-
+    
         function nextPage() {
             if (currentPage < Math.ceil(formations.length / rowsPerPage)) {
                 currentPage++;
                 displayTable();
             }
         }
-
+    
         displayTable();
     </script>
-</div>     
+        
 </body>
 </html>

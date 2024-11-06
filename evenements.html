@@ -192,129 +192,139 @@
             </div>
             <!-- Statistiques des Événements End -->
 
-            <!-- Tableau des Événements Start -->
-        <div class="bg-secondary rounded p-4 mb-4">
-            <h6 class="mb-4">Événements</h6>
-            <div class="d-flex mb-3">
-                <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher un événement">
-                <button class="btn btn-success" onclick="searchEvent()">Rechercher</button>
-            </div>
-            <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-white">
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>Nom</th>
-                            <th>Local</th>
-                            <th>Type</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="eventTable">
-                        <!-- JavaScript will insert rows here -->
-                    </tbody>
-                </table>
-                <div class="d-flex justify-content-between mt-3">
-                    <span id="paginationInfo"></span>
-                    <nav>
-                        <ul class="pagination pagination-sm mb-0">
-                            <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
-                            <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+          <!-- Tableau des Événements Start -->
+<div class="bg-secondary rounded p-4 mb-4">
+    <h6 class="mb-4">Événements</h6>
+    <div class="d-flex mb-3">
+        <input type="text" id="searchInput" class="form-control me-2" placeholder="Rechercher un événement">
+        <button class="btn btn-success" onclick="searchEvent()">Rechercher</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <thead>
+                <tr class="text-white">
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Nom</th>
+                    <th>Local</th>
+                    <th>Type</th>
+                    <th>Description</th> <!-- New Description Column -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="eventTable">
+                <!-- JavaScript will insert rows here -->
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+            <span id="paginationInfo"></span>
+            <nav>
+                <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">«</a></li>
+                    <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">»</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Tableau des Événements End -->
-
-        <!-- Formulaire pour Ajouter un Événement Start -->
-        <div id="addForm" class="bg-secondary rounded p-4">
-            <h6 class="mb-4">Ajouter un Événement</h6>
-            <form>
-                <!-- ID Événement -->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control bg-dark text-light" id="idEvenement" placeholder="ID Événement">
-                    <label for="idEvenement" class="text-light">ID Événement</label>
-                </div>
-
-                <!-- Nom -->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control bg-dark text-light" id="nomEvenement" placeholder="Nom">
-                    <label for="nomEvenement" class="text-light">Nom</label>
-                </div>
-
-                <!-- Date -->
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control bg-dark text-light" id="dateEvenement" placeholder="Date">
-                    <label for="dateEvenement" class="text-light">Date</label>
-                </div>
-
-                <!-- Local -->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control bg-dark text-light" id="localEvenement" placeholder="Local">
-                    <label for="localEvenement" class="text-light">Local</label>
-                </div>
-
-                <!-- Type (Liste déroulante) -->
-                <div class="form-floating mb-3">
-                    <select class="form-select bg-dark text-light" id="typeEvenement">
-                        <option selected>Sélectionner un type</option>
-                        <option value="1">Conférence</option>
-                        <option value="2">Atelier</option>
-                        <option value="3">Séminaire</option>
-                    </select>
-                    <label for="typeEvenement" class="text-light">Type</label>
-                </div>
-
-                <!-- Boutons Enregistrer et Annuler -->
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-success me-2">Enregistrer</button>
-                    <button type="button" class="btn btn-danger ms-2">Annuler</button>
-                </div>
-            </form>
-        </div>
-        <!-- Formulaire pour Ajouter un Événement End -->
-
-        <!-- Formulaire pour Modifier un Événement Start -->
-        <div id="editForm" class="bg-secondary rounded p-4 mt-4">
-            <h6 class="mb-4">Modifier un Événement</h6>
-            <form id="editEventForm">
-                <input type="hidden" id="editEventId">
-                <!-- Nom -->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control bg-dark text-light" id="editEventNom" placeholder="Nom">
-                    <label for="editEventNom" class="text-light">Nom</label>
-                </div>
-                <!-- Date -->
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control bg-dark text-light" id="editEventDate" placeholder="Date">
-                    <label for="editEventDate" class="text-light">Date</label>
-                </div>
-                <!-- Local -->
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control bg-dark text-light" id="editEventLocal" placeholder="Local">
-                    <label for="editEventLocal" class="text-light">Local</label>
-                </div>
-                <!-- Type -->
-                <div class="form-floating mb-3">
-                    <select class="form-select bg-dark text-light" id="editEventType">
-                        <option>Conférence</option>
-                        <option>Atelier</option>
-                        <option>Séminaire</option>
-                    </select>
-                    <label for="editEventType" class="text-light">Type</label>
-                </div>
-                <!-- Boutons Enregistrer et Annuler -->
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-success mx-2" onclick="saveEventChanges()">Enregistrer les modifications</button>
-                    <button type="button" class="btn btn-danger mx-2" onclick="cancelEventEdit()">Annuler</button>
-                </div>
-            </form>
-        </div>
-        <!-- Formulaire pour Modifier un Événement End -->
     </div>
 </div>
+<!-- Tableau des Événements End -->
+
+<!-- Formulaire pour Ajouter un Événement Start -->
+<div id="addForm" class="bg-secondary rounded p-4">
+    <h6 class="mb-4">Ajouter un Événement</h6>
+    <form id="addEventForm" onsubmit="addEvent(event)">
+        <!-- ID Événement -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark text-light" id="idEvenement" placeholder="ID Événement" required>
+            <label for="idEvenement" class="text-light">ID Événement</label>
+        </div>
+
+        <!-- Nom -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark text-light" id="nomEvenement" placeholder="Nom" required>
+            <label for="nomEvenement" class="text-light">Nom</label>
+        </div>
+
+        <!-- Date -->
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control bg-dark text-light" id="dateEvenement" placeholder="Date" required>
+            <label for="dateEvenement" class="text-light">Date</label>
+        </div>
+
+        <!-- Local -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark text-light" id="localEvenement" placeholder="Local" required>
+            <label for="localEvenement" class="text-light">Local</label>
+        </div>
+
+        <!-- Type (Liste déroulante) -->
+        <div class="form-floating mb-3">
+            <select class="form-select bg-dark text-light" id="typeEvenement" required>
+                <option selected disabled>Sélectionner un type</option>
+                <option value="Conférence">Conférence</option>
+                <option value="Atelier">Atelier</option>
+                <option value="Séminaire">Séminaire</option>
+            </select>
+            <label for="typeEvenement" class="text-light">Type</label>
+        </div>
+
+        <!-- Description -->
+        <div class="form-floating mb-3">
+            <textarea class="form-control bg-dark text-light" id="descriptionEvenement" placeholder="Description" rows="3" required></textarea>
+            <label for="descriptionEvenement" class="text-light">Description</label>
+        </div>
+
+        <!-- Boutons Enregistrer et Annuler -->
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success me-2">Enregistrer</button>
+            <button type="button" class="btn btn-danger ms-2" onclick="cancelAdd()">Annuler</button>
+        </div>
+    </form>
+</div>
+<!-- Formulaire pour Ajouter un Événement End -->
+
+<!-- Formulaire pour Modifier un Événement Start -->
+<div id="editForm" class="bg-secondary rounded p-4 mt-4">
+    <h6 class="mb-4">Modifier un Événement</h6>
+    <form id="editEventForm">
+        <input type="hidden" id="editEventId">
+        <!-- Nom -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark text-light" id="editEventNom" placeholder="Nom" required>
+            <label for="editEventNom" class="text-light">Nom</label>
+        </div>
+        <!-- Date -->
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control bg-dark text-light" id="editEventDate" placeholder="Date" required>
+            <label for="editEventDate" class="text-light">Date</label>
+        </div>
+        <!-- Local -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark text-light" id="editEventLocal" placeholder="Local" required>
+            <label for="editEventLocal" class="text-light">Local</label>
+        </div>
+        <!-- Type -->
+        <div class="form-floating mb-3">
+            <select class="form-select bg-dark text-light" id="editEventType" required>
+                <option>Conférence</option>
+                <option>Atelier</option>
+                <option>Séminaire</option>
+            </select>
+            <label for="editEventType" class="text-light">Type</label>
+        </div>
+        <!-- Description -->
+        <div class="form-floating mb-3">
+            <textarea class="form-control bg-dark text-light" id="editEventDescription" placeholder="Description" rows="3" required></textarea>
+            <label for="editEventDescription" class="text-light">Description</label>
+        </div>
+        <!-- Boutons Enregistrer et Annuler -->
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-success mx-2" onclick="saveEventChanges()">Enregistrer les modifications</button>
+            <button type="button" class="btn btn-danger mx-2" onclick="cancelEventEdit()">Annuler</button>
+        </div>
+    </form>
+</div>
+<!-- Formulaire pour Modifier un Événement End -->
 
 <script>
     // Masquer le spinner lorsque le contenu est chargé
@@ -327,11 +337,11 @@
 
     // Code JavaScript pour gérer la pagination et les événements
     const events = [
-        { id: 1, date: "2045-01-01", nom: "Événement A", local: "Salle 201", type: "Conférence" },
-        { id: 2, date: "2045-02-05", nom: "Événement B", local: "Salle 202", type: "Atelier" },
-        { id: 3, date: "2045-03-15", nom: "Événement C", local: "Salle 203", type: "Séminaire" },
-        { id: 4, date: "2045-04-20", nom: "Événement D", local: "Salle 204", type: "Conférence" },
-        { id: 5, date: "2045-05-12", nom: "Événement E", local: "Salle 205", type: "Atelier" },
+        { id: 1, date: "2045-01-01", nom: "Événement A", local: "Salle 201", type: "Conférence", description: "Description de l'événement A." },
+        { id: 2, date: "2045-02-05", nom: "Événement B", local: "Salle 202", type: "Atelier", description: "Description de l'événement B." },
+        { id: 3, date: "2045-03-15", nom: "Événement C", local: "Salle 203", type: "Séminaire", description: "Description de l'événement C." },
+        { id: 4, date: "2045-04-20", nom: "Événement D", local: "Salle 204", type: "Conférence", description: "Description de l'événement D." },
+        { id: 5, date: "2045-05-12", nom: "Événement E", local: "Salle 205", type: "Atelier", description: "Description de l'événement E." },
     ];
 
     let currentPage = 1;
@@ -352,6 +362,7 @@
                 <td>${event.nom}</td>
                 <td>${event.local}</td>
                 <td>${event.type}</td>
+                <td>${event.description}</td> <!-- Added Description Column -->
                 <td>
                     <button class="btn btn-sm btn-warning me-2" onclick="editEvent(${event.id})">Modifier</button>
                     <button class="btn btn-sm btn-danger" onclick="deleteEvent(${event.id})">Supprimer</button>
@@ -363,6 +374,32 @@
         document.getElementById("paginationInfo").textContent = `Page ${currentPage} / ${Math.ceil(events.length / rowsPerPage)}`;
     }
 
+    function addEvent(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        const id = document.getElementById("idEvenement").value;
+        const nom = document.getElementById("nomEvenement").value;
+        const date = document.getElementById("dateEvenement").value;
+        const local = document.getElementById("localEvenement").value;
+        const type = document.getElementById("typeEvenement").value;
+        const description = document.getElementById("descriptionEvenement").value; // Get the description
+
+        // Create a new event object
+        const newEvent = {
+            id: parseInt(id),
+            date,
+            nom,
+            local,
+            type,
+            description
+        };
+
+        // Add the new event to the events array
+        events.push(newEvent);
+        displayEventTable();
+        cancelAdd();
+    }
+
     function editEvent(id) {
         const event = events.find(e => e.id === id);
         if (event) {
@@ -371,6 +408,7 @@
             document.getElementById("editEventDate").value = event.date;
             document.getElementById("editEventLocal").value = event.local;
             document.getElementById("editEventType").value = event.type;
+            document.getElementById("editEventDescription").value = event.description; // Set the description
             document.getElementById("editEventForm").scrollIntoView({ behavior: 'smooth' });
         }
     }
@@ -383,6 +421,7 @@
             event.date = document.getElementById("editEventDate").value;
             event.local = document.getElementById("editEventLocal").value;
             event.type = document.getElementById("editEventType").value;
+            event.description = document.getElementById("editEventDescription").value; // Update the description
             displayEventTable();
         }
     }
@@ -395,6 +434,14 @@
                 displayEventTable();
             }
         }
+    }
+
+    function cancelAdd() {
+        document.getElementById("addEventForm").reset();
+    }
+
+    function cancelEventEdit() {
+        document.getElementById("editEventForm").reset();
     }
 
     function prevPage() {
@@ -413,6 +460,7 @@
 
     displayEventTable();
 </script>
+
 
 </body>
 </html>
